@@ -1,0 +1,8 @@
+{
+  "schemaVersion": "1.0.0",
+  "timezone": "Asia/Kolkata",
+  "source": "21-day-fat-loss-plan.json",
+  "deliveryModes": ["in_app", "web_notification", "web_push"],
+  "statuses": ["pending", "completed", "skipped", "snoozed"],
+  "note": "Push schedules are generated from the plan at runtime. This file contains no personal profile or subscription data."
+}

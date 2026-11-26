@@ -1,0 +1,26 @@
+{
+  "name": "healthify-21-day-fat-loss-pwa",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Privacy-first Marathi 21-day healthy routine PWA",
+  "scripts": {
+    "test": "node --test",
+    "validate:data": "node scripts/validate-plan.mjs",
+    "check": "node scripts/validate-plan.mjs && node --test && node scripts/check-syntax.mjs && node scripts/build-static.mjs",
+    "push:start": "node push-service/server.js",
+    "build:static": "node scripts/build-static.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "node-cron": "^3.0.3",
+    "web-push": "^3.6.7"
+  }
+}

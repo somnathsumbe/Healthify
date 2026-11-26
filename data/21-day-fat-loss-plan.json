@@ -1,0 +1,5030 @@
+{
+  "metadata": {
+    "projectName": "21-Day Fat Loss & Healthy Routine Planner",
+    "schemaVersion": "1.0.0",
+    "language": "mr-IN",
+    "timezone": "Asia/Kolkata",
+    "generatedDate": "2026-11-26",
+    "purpose": "सॉफ्टवेअरमध्ये दिवसनिहाय आहार, पाणी, व्यायाम आणि Reminder दाखवण्यासाठी reference data; वैद्यकीय उपचार/निदान नाही."
+  },
+  "planSettings": {
+    "durationDays": 21,
+    "startDate": "2026-11-27",
+    "endDate": null,
+    "dailyCaloriesKcal": {
+      "min": null,
+      "max": null,
+      "type": "local_profile_review_required"
+    },
+    "dailyProteinG": {
+      "min": null,
+      "max": null,
+      "type": "local_profile_review_required"
+    },
+    "dailyWaterMl": {
+      "min": 2000,
+      "max": 2500,
+      "type": "flexible_beverage_goal_not_compulsory_water_loading"
+    },
+    "sleepTargetHours": {
+      "min": 7,
+      "max": 9
+    },
+    "expectedWeightChangeKg": {
+      "low": 0.5,
+      "high": 1.5,
+      "note": "फक्त वास्तववादी अंदाज; हमी नाही. पाणी/ग्लायकोजेनमुळे scale weight वेगळे बदलू शकते."
+    },
+    "targetWeightKg": null,
+    "nutritionCalculation": "प्रत्येक food item चे Calories/Protein अचूक दाखवण्यासाठी food master मध्ये 100g/ml वरील values आणि edible portion जोडून मोजा. JSON मधील nutrition values null असणे हेतुपुरस्सर आहे; recipe/brand/तेलानुसार आकडे बदलतात."
+  },
+  "dailyReminderTemplate": [
+    {
+      "time": "05:00",
+      "type": "wake",
+      "title": "उठण्याची वेळ",
+      "message": "उठा; झोपेची नोंद करा."
+    },
+    {
+      "time": "05:05",
+      "type": "water",
+      "title": "सकाळचे पाणी",
+      "quantityMl": 300,
+      "message": "साधे पाणी प्या."
+    },
+    {
+      "time": "05:20",
+      "type": "mobility",
+      "title": "हलका Warm-up",
+      "durationMin": 7,
+      "message": "हलकी हालचाल; वेदना तपासा."
+    },
+    {
+      "time": "05:30",
+      "type": "cardio",
+      "title": "कमी धक्क्याचा व्यायाम",
+      "durationMin": 15,
+      "message": "वेदना नसल्यास आरामात चालणे; धावणे/उड्या नाहीत."
+    },
+    {
+      "time": "06:00",
+      "type": "cooldown",
+      "title": "Cool-down",
+      "durationMin": 5,
+      "message": "हळू चालणे आणि आरामदायी हालचाल."
+    },
+    {
+      "time": "06:15",
+      "type": "water",
+      "title": "पाणी",
+      "quantityMl": 200,
+      "message": "पाणी प्या."
+    },
+    {
+      "time": "06:45",
+      "type": "meal",
+      "title": "दूध",
+      "message": "150 ml कमी फॅटचे दूध; साखर न घालता."
+    },
+    {
+      "time": "07:15",
+      "type": "meal",
+      "title": "नाश्ता",
+      "message": "आजच्या Day Plan नुसार नाश्ता करा."
+    },
+    {
+      "time": "09:00",
+      "type": "water",
+      "title": "पाणी",
+      "quantityMl": 250,
+      "message": "पाणी प्या."
+    },
+    {
+      "time": "10:30",
+      "type": "water",
+      "title": "पाणी",
+      "quantityMl": 250,
+      "message": "पाणी प्या."
+    },
+    {
+      "time": "11:00",
+      "type": "meal",
+      "title": "मुख्य जेवण",
+      "message": "आजच्या Day Plan नुसार जेवण करा."
+    },
+    {
+      "time": "12:30",
+      "type": "water",
+      "title": "पाणी",
+      "quantityMl": 250,
+      "message": "पाणी प्या."
+    },
+    {
+      "time": "14:00",
+      "type": "meal",
+      "title": "दुपारचा स्नॅक",
+      "message": "आजच्या Day Plan नुसार फळ/दही/चणे घ्या."
+    },
+    {
+      "time": "15:30",
+      "type": "water",
+      "title": "पाणी",
+      "quantityMl": 250,
+      "message": "पाणी प्या."
+    },
+    {
+      "time": "16:30",
+      "type": "meal",
+      "title": "संध्याकाळचा स्नॅक",
+      "message": "आजच्या Day Plan नुसार प्रोटीन स्नॅक घ्या."
+    },
+    {
+      "time": "17:30",
+      "type": "water",
+      "title": "पाणी",
+      "quantityMl": 250,
+      "message": "पाणी प्या."
+    },
+    {
+      "time": "18:00",
+      "type": "movement_break",
+      "title": "कामातून हालचाल ब्रेक",
+      "durationMin": 5,
+      "message": "Laptop वरून उठा; घरात हलके चाला."
+    },
+    {
+      "time": "19:15",
+      "type": "water",
+      "title": "पाणी",
+      "quantityMl": 150,
+      "message": "तहान असल्यास पाणी प्या."
+    },
+    {
+      "time": "19:45",
+      "type": "meal",
+      "title": "रात्रीचे जेवण",
+      "message": "आजच्या Day Plan नुसार रात्रीचे जेवण करा."
+    },
+    {
+      "time": "20:30",
+      "type": "water",
+      "title": "पाणी",
+      "quantityMl": 150,
+      "message": "तहान असल्यास पाणी प्या."
+    },
+    {
+      "time": "21:30",
+      "type": "sleep_prep",
+      "title": "झोपेची तयारी",
+      "message": "स्क्रीन/काम कमी करा; उद्याची तयारी करा."
+    },
+    {
+      "time": "22:00",
+      "type": "sleep",
+      "title": "झोप",
+      "message": "शक्यतो 22:00 वाजता झोपा."
+    }
+  ],
+  "waterReminderDetails": [
+    {
+      "time": "05:05",
+      "quantityMl": 300,
+      "message": "उठल्यानंतर साधे पाणी प्या"
+    },
+    {
+      "time": "06:15",
+      "quantityMl": 200,
+      "message": "पाणी प्या"
+    },
+    {
+      "time": "09:00",
+      "quantityMl": 250,
+      "message": "पाणी प्या"
+    },
+    {
+      "time": "10:30",
+      "quantityMl": 250,
+      "message": "पाणी प्या"
+    },
+    {
+      "time": "12:30",
+      "quantityMl": 250,
+      "message": "पाणी प्या"
+    },
+    {
+      "time": "15:30",
+      "quantityMl": 250,
+      "message": "पाणी प्या"
+    },
+    {
+      "time": "17:30",
+      "quantityMl": 250,
+      "message": "पाणी प्या"
+    },
+    {
+      "time": "19:15",
+      "quantityMl": 150,
+      "message": "तहान असल्यास पाणी प्या"
+    },
+    {
+      "time": "20:30",
+      "quantityMl": 150,
+      "message": "तहान असल्यास पाणी प्या"
+    }
+  ],
+  "exerciseSafety": {
+    "medicalReviewRecommended": "अधूनमधून गुडघेदुखी असल्याने धावणे, उड्या किंवा खोल बैठका वाढवण्यापूर्वी ऑर्थोपेडिक डॉक्टर/फिजिओथेरपिस्टकडून मूल्यांकन करा.",
+    "redFlags": [
+      "गुडघा खूप दुखणे",
+      "मोठी सूज किंवा आकार बदल",
+      "पायावर वजन देता न येणे",
+      "गुडघा लॉक होणे/सटकणे",
+      "लालसरपणा/गरमपणा आणि ताप"
+    ],
+    "redFlagAction": "व्यायाम थांबवा आणि तातडीने वैद्यकीय मदत घ्या.",
+    "painRule": "वेदना निर्माण करणारा व्यायाम करू नका; चालताना वेदना वाढल्यास वेळ/वेग कमी करा किंवा थांबा.",
+    "notMedicalDiagnosis": true
+  },
+  "progressTracking": {
+    "daily": [
+      "सकाळचे वजन (शौचालयानंतर, नाश्त्यापूर्वी, समान परिस्थितीत)",
+      "पाणी नोंद",
+      "जेवण पूर्ण/अपूर्ण",
+      "व्यायाम पूर्ण/अपूर्ण",
+      "गुडघेदुखी 0-10",
+      "झोपेचे तास"
+    ],
+    "weekly": [
+      "कंबरेचा घेर - दिवस 1, 7, 14, 21",
+      "सात दिवसांची सरासरी वजन तुलना"
+    ],
+    "waistCircumferenceCmInitial": null,
+    "checkpoints": [
+      1,
+      7,
+      14,
+      21
+    ]
+  },
+  "appFunctionalRequirements": [
+    "वापरकर्ता Profile व Plan Start Date configure करू शकेल.",
+    "Day 1 ते Day 21 साठी प्रत्येक meal, quantity, unit, preparation state, reminder आणि workout दाखवावा.",
+    "Meal item चे cooked/raw state आणि gram/ml quantity स्पष्ट दाखवावे.",
+    "Food Master मधील nutrition values वापरून meal/day Calories व Protein calculate करावे; missing values असल्यास Estimate/Incomplete दाखवावे.",
+    "Reminder status: pending, completed, skipped, snoozed; completion time save करावी.",
+    "Water tracker मध्ये logged water आणि target range दाखवावी; target force करू नये.",
+    "Weight, waist, knee pain score, sleep आणि exercise logs साठवावेत.",
+    "JSON import/export आणि CSV export उपलब्ध करावा.",
+    "User बदल केल्यास original plan copy नष्ट न करता custom plan version तयार करावा.",
+    "Medical alert / supplement dose कधीही स्वतःहून auto-fill किंवा modify करू नये."
+  ],
+  "days": [
+    {
+      "day": 1,
+      "phase": "Phase 1 - Routine",
+      "meals": [
+        {
+          "time": "06:45",
+          "label": "सकाळचे दूध",
+          "items": [
+            {
+              "name": "कमी फॅटचे दूध",
+              "quantity": 150,
+              "unit": "ml",
+              "weightState": "as_served",
+              "category": "food",
+              "preparationNote": "साखर न घालता; 07:15 नाश्त्याच्या एकत्रित कॅलरीत समाविष्ट करा",
+              "foodMasterId": "food_001"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "07:15",
+          "label": "नाश्ता",
+          "items": [
+            {
+              "name": "पूर्ण अंडी",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_002"
+            },
+            {
+              "name": "अंड्याचा पांढरा भाग",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_003"
+            },
+            {
+              "name": "सफरचंद",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_004"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "11:00",
+          "label": "दुपारचे मुख्य जेवण",
+          "items": [
+            {
+              "name": "चपाती",
+              "quantity": 2,
+              "unit": "मध्यम नग",
+              "weightState": "as_served",
+              "category": "food",
+              "preparationNote": "प्रत्येकी साधारण 30g गव्हाचे पीठ",
+              "foodMasterId": "food_005"
+            },
+            {
+              "name": "मूग डाळ",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_006"
+            },
+            {
+              "name": "पालक भाजी",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_007"
+            },
+            {
+              "name": "साधे दही",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_008"
+            },
+            {
+              "name": "काकडी-टोमॅटो कोशिंबीर",
+              "quantity": 100,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_009"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "14:00",
+          "label": "दुपारचा स्नॅक",
+          "items": [
+            {
+              "name": "पेरू",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_010"
+            },
+            {
+              "name": "भाजलेले चणे",
+              "quantity": 25,
+              "unit": "g",
+              "weightState": "dry",
+              "category": "food",
+              "foodMasterId": "food_011"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "16:30",
+          "label": "संध्याकाळचा स्नॅक",
+          "items": [
+            {
+              "name": "मटकी उसळ",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_012"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "19:45",
+          "label": "रात्रीचे जेवण",
+          "items": [
+            {
+              "name": "चिकन",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "preparationNote": "त्वचाविरहित, कमी तेलात शिजवलेले",
+              "foodMasterId": "food_013"
+            },
+            {
+              "name": "चपाती",
+              "quantity": 1,
+              "unit": "मध्यम नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_005"
+            },
+            {
+              "name": "भेंडी भाजी",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_014"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        }
+      ],
+      "exercise": {
+        "day": 1,
+        "phase": "ओळख व वेदना निरीक्षण",
+        "warmUpMin": 7,
+        "walkingMin": 15,
+        "coolDownMin": 5,
+        "strengthExercises": [
+          "हलके Shoulder Rolls",
+          "Ankle Pumps",
+          "हलक्या Hamstring/Calf हालचाली"
+        ],
+        "avoid": [
+          "उड्या",
+          "धावणे/स्प्रिंट",
+          "वेगाने दिशा बदलणारा रॅकेट खेळ",
+          "खोल बैठका/Squats",
+          "वेदना वाढवणारा व्यायाम"
+        ],
+        "painRule": "व्यायामादरम्यान किंवा नंतर वेदना वाढल्यास थांबा/कमी करा आणि डॉक्टर/फिजिओथेरपिस्टचा सल्ला घ्या."
+      },
+      "dailyTargets": {
+        "caloriesKcal": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "proteinG": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "waterMl": {
+          "min": 2000,
+          "max": 2500,
+          "status": "adjust_for_thirst_weather_sweat_and_clinician_advice"
+        }
+      },
+      "notes": [
+        "तेल/तूप मोजून वापरा; पाककृतीनुसार Calories बदलतात.",
+        "नाश्त्याचे दूध 150 ml रोजच्या कॅलरीत मोजा.",
+        "भात/चपाती/भाकरी यांचे प्रमाण त्या दिवसाच्या मेन्याप्रमाणे ठेवा.",
+        "भूक, अशक्तपणा किंवा चक्कर असल्यास खाणे/व्यायाम जबरदस्तीने चालू ठेवू नका."
+      ]
+    },
+    {
+      "day": 2,
+      "phase": "Phase 1 - Routine",
+      "meals": [
+        {
+          "time": "06:45",
+          "label": "सकाळचे दूध",
+          "items": [
+            {
+              "name": "कमी फॅटचे दूध",
+              "quantity": 150,
+              "unit": "ml",
+              "weightState": "as_served",
+              "category": "food",
+              "preparationNote": "साखर न घालता; 07:15 नाश्त्याच्या एकत्रित कॅलरीत समाविष्ट करा",
+              "foodMasterId": "food_001"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "07:15",
+          "label": "नाश्ता",
+          "items": [
+            {
+              "name": "पूर्ण अंडी",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_002"
+            },
+            {
+              "name": "अंड्याचा पांढरा भाग",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_003"
+            },
+            {
+              "name": "पोहे",
+              "quantity": 40,
+              "unit": "g",
+              "weightState": "raw",
+              "category": "food",
+              "preparationNote": "भाज्या घालून; तेल मोजून",
+              "foodMasterId": "food_015"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "11:00",
+          "label": "दुपारचे मुख्य जेवण",
+          "items": [
+            {
+              "name": "चपाती",
+              "quantity": 2,
+              "unit": "मध्यम नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_005"
+            },
+            {
+              "name": "मटकी उसळ",
+              "quantity": 180,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_012"
+            },
+            {
+              "name": "मेथी भाजी",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_016"
+            },
+            {
+              "name": "साधे दही",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_008"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "14:00",
+          "label": "दुपारचा स्नॅक",
+          "items": [
+            {
+              "name": "पपई",
+              "quantity": 200,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_017"
+            },
+            {
+              "name": "भाजलेले चणे",
+              "quantity": 20,
+              "unit": "g",
+              "weightState": "dry",
+              "category": "food",
+              "foodMasterId": "food_011"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "16:30",
+          "label": "संध्याकाळचा स्नॅक",
+          "items": [
+            {
+              "name": "उकडलेली अंडी",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_018"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "19:45",
+          "label": "रात्रीचे जेवण",
+          "items": [
+            {
+              "name": "मासे",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "preparationNote": "पूर्ण शिजवलेले; तळलेले नाही",
+              "foodMasterId": "food_019"
+            },
+            {
+              "name": "ज्वारीची भाकरी",
+              "quantity": 1,
+              "unit": "लहान नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_020"
+            },
+            {
+              "name": "दुधी भाजी",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_021"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        }
+      ],
+      "exercise": {
+        "day": 2,
+        "phase": "ओळख व वेदना निरीक्षण",
+        "warmUpMin": 7,
+        "walkingMin": 15,
+        "coolDownMin": 5,
+        "strengthExercises": [
+          "हलके Shoulder Rolls",
+          "Ankle Pumps",
+          "हलक्या Hamstring/Calf हालचाली"
+        ],
+        "avoid": [
+          "उड्या",
+          "धावणे/स्प्रिंट",
+          "वेगाने दिशा बदलणारा रॅकेट खेळ",
+          "खोल बैठका/Squats",
+          "वेदना वाढवणारा व्यायाम"
+        ],
+        "painRule": "व्यायामादरम्यान किंवा नंतर वेदना वाढल्यास थांबा/कमी करा आणि डॉक्टर/फिजिओथेरपिस्टचा सल्ला घ्या."
+      },
+      "dailyTargets": {
+        "caloriesKcal": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "proteinG": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "waterMl": {
+          "min": 2000,
+          "max": 2500,
+          "status": "adjust_for_thirst_weather_sweat_and_clinician_advice"
+        }
+      },
+      "notes": [
+        "तेल/तूप मोजून वापरा; पाककृतीनुसार Calories बदलतात.",
+        "नाश्त्याचे दूध 150 ml रोजच्या कॅलरीत मोजा.",
+        "भात/चपाती/भाकरी यांचे प्रमाण त्या दिवसाच्या मेन्याप्रमाणे ठेवा.",
+        "भूक, अशक्तपणा किंवा चक्कर असल्यास खाणे/व्यायाम जबरदस्तीने चालू ठेवू नका."
+      ]
+    },
+    {
+      "day": 3,
+      "phase": "Phase 1 - Routine",
+      "meals": [
+        {
+          "time": "06:45",
+          "label": "सकाळचे दूध",
+          "items": [
+            {
+              "name": "कमी फॅटचे दूध",
+              "quantity": 150,
+              "unit": "ml",
+              "weightState": "as_served",
+              "category": "food",
+              "preparationNote": "साखर न घालता; 07:15 नाश्त्याच्या एकत्रित कॅलरीत समाविष्ट करा",
+              "foodMasterId": "food_001"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "07:15",
+          "label": "नाश्ता",
+          "items": [
+            {
+              "name": "पूर्ण अंडी",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_002"
+            },
+            {
+              "name": "अंड्याचा पांढरा भाग",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_003"
+            },
+            {
+              "name": "बेसन",
+              "quantity": 60,
+              "unit": "g",
+              "weightState": "raw",
+              "category": "food",
+              "preparationNote": "यापासून 2 छोटे चिल्ले; कमी तेल",
+              "foodMasterId": "food_022"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "11:00",
+          "label": "दुपारचे मुख्य जेवण",
+          "items": [
+            {
+              "name": "चपाती",
+              "quantity": 2,
+              "unit": "मध्यम नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_005"
+            },
+            {
+              "name": "पालक पनीर",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "preparationNote": "एकूण पनीर साधारण 80g",
+              "foodMasterId": "food_023"
+            },
+            {
+              "name": "मूग डाळ",
+              "quantity": 100,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_006"
+            },
+            {
+              "name": "कोशिंबीर",
+              "quantity": 100,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_024"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "14:00",
+          "label": "दुपारचा स्नॅक",
+          "items": [
+            {
+              "name": "सफरचंद",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_004"
+            },
+            {
+              "name": "साधे दही",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_008"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "16:30",
+          "label": "संध्याकाळचा स्नॅक",
+          "items": [
+            {
+              "name": "अंकुरलेले मूग उसळ",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_025"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "19:45",
+          "label": "रात्रीचे जेवण",
+          "items": [
+            {
+              "name": "चिकन",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_013"
+            },
+            {
+              "name": "भात",
+              "quantity": 100,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_026"
+            },
+            {
+              "name": "फ्लॉवर भाजी",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_027"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        }
+      ],
+      "exercise": {
+        "day": 3,
+        "phase": "ओळख व वेदना निरीक्षण",
+        "warmUpMin": 7,
+        "walkingMin": 15,
+        "coolDownMin": 5,
+        "strengthExercises": [
+          "हलके Shoulder Rolls",
+          "Ankle Pumps",
+          "हलक्या Hamstring/Calf हालचाली"
+        ],
+        "avoid": [
+          "उड्या",
+          "धावणे/स्प्रिंट",
+          "वेगाने दिशा बदलणारा रॅकेट खेळ",
+          "खोल बैठका/Squats",
+          "वेदना वाढवणारा व्यायाम"
+        ],
+        "painRule": "व्यायामादरम्यान किंवा नंतर वेदना वाढल्यास थांबा/कमी करा आणि डॉक्टर/फिजिओथेरपिस्टचा सल्ला घ्या."
+      },
+      "dailyTargets": {
+        "caloriesKcal": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "proteinG": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "waterMl": {
+          "min": 2000,
+          "max": 2500,
+          "status": "adjust_for_thirst_weather_sweat_and_clinician_advice"
+        }
+      },
+      "notes": [
+        "तेल/तूप मोजून वापरा; पाककृतीनुसार Calories बदलतात.",
+        "नाश्त्याचे दूध 150 ml रोजच्या कॅलरीत मोजा.",
+        "भात/चपाती/भाकरी यांचे प्रमाण त्या दिवसाच्या मेन्याप्रमाणे ठेवा.",
+        "भूक, अशक्तपणा किंवा चक्कर असल्यास खाणे/व्यायाम जबरदस्तीने चालू ठेवू नका."
+      ]
+    },
+    {
+      "day": 4,
+      "phase": "Phase 1 - Routine",
+      "meals": [
+        {
+          "time": "06:45",
+          "label": "सकाळचे दूध",
+          "items": [
+            {
+              "name": "कमी फॅटचे दूध",
+              "quantity": 150,
+              "unit": "ml",
+              "weightState": "as_served",
+              "category": "food",
+              "preparationNote": "साखर न घालता; 07:15 नाश्त्याच्या एकत्रित कॅलरीत समाविष्ट करा",
+              "foodMasterId": "food_001"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "07:15",
+          "label": "नाश्ता",
+          "items": [
+            {
+              "name": "पूर्ण अंडी",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_002"
+            },
+            {
+              "name": "अंड्याचा पांढरा भाग",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_003"
+            },
+            {
+              "name": "ओट्स",
+              "quantity": 40,
+              "unit": "g",
+              "weightState": "raw",
+              "category": "food",
+              "preparationNote": "पाण्यात शिजवलेले",
+              "foodMasterId": "food_028"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "11:00",
+          "label": "दुपारचे मुख्य जेवण",
+          "items": [
+            {
+              "name": "ज्वारीची भाकरी",
+              "quantity": 1,
+              "unit": "मध्यम नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_020"
+            },
+            {
+              "name": "हरभरा उसळ",
+              "quantity": 180,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_029"
+            },
+            {
+              "name": "मेथी भाजी",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_016"
+            },
+            {
+              "name": "साधे दही",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_008"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "14:00",
+          "label": "दुपारचा स्नॅक",
+          "items": [
+            {
+              "name": "संत्रे",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_030"
+            },
+            {
+              "name": "भाजलेले चणे",
+              "quantity": 25,
+              "unit": "g",
+              "weightState": "dry",
+              "category": "food",
+              "foodMasterId": "food_011"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "16:30",
+          "label": "संध्याकाळचा स्नॅक",
+          "items": [
+            {
+              "name": "पनीर",
+              "quantity": 100,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "preparationNote": "कमी फॅट पनीर प्राधान्य",
+              "foodMasterId": "food_031"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "19:45",
+          "label": "रात्रीचे जेवण",
+          "items": [
+            {
+              "name": "मासे",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_019"
+            },
+            {
+              "name": "चपाती",
+              "quantity": 1,
+              "unit": "मध्यम नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_005"
+            },
+            {
+              "name": "पालक भाजी",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_007"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        }
+      ],
+      "exercise": {
+        "day": 4,
+        "phase": "हलकी सातत्यपूर्ण हालचाल",
+        "warmUpMin": 7,
+        "walkingMin": 20,
+        "coolDownMin": 5,
+        "strengthExercises": [
+          "Wall Push-up 2 x 8-10",
+          "Glute Bridge 2 x 8 (वेदना नसल्यास)",
+          "Ankle Pumps 2 x 10"
+        ],
+        "avoid": [
+          "उड्या",
+          "धावणे/स्प्रिंट",
+          "वेगाने दिशा बदलणारा रॅकेट खेळ",
+          "खोल बैठका/Squats",
+          "वेदना वाढवणारा व्यायाम"
+        ],
+        "painRule": "व्यायामादरम्यान किंवा नंतर वेदना वाढल्यास थांबा/कमी करा आणि डॉक्टर/फिजिओथेरपिस्टचा सल्ला घ्या."
+      },
+      "dailyTargets": {
+        "caloriesKcal": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "proteinG": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "waterMl": {
+          "min": 2000,
+          "max": 2500,
+          "status": "adjust_for_thirst_weather_sweat_and_clinician_advice"
+        }
+      },
+      "notes": [
+        "तेल/तूप मोजून वापरा; पाककृतीनुसार Calories बदलतात.",
+        "नाश्त्याचे दूध 150 ml रोजच्या कॅलरीत मोजा.",
+        "भात/चपाती/भाकरी यांचे प्रमाण त्या दिवसाच्या मेन्याप्रमाणे ठेवा.",
+        "भूक, अशक्तपणा किंवा चक्कर असल्यास खाणे/व्यायाम जबरदस्तीने चालू ठेवू नका."
+      ]
+    },
+    {
+      "day": 5,
+      "phase": "Phase 1 - Routine",
+      "meals": [
+        {
+          "time": "06:45",
+          "label": "सकाळचे दूध",
+          "items": [
+            {
+              "name": "कमी फॅटचे दूध",
+              "quantity": 150,
+              "unit": "ml",
+              "weightState": "as_served",
+              "category": "food",
+              "preparationNote": "साखर न घालता; 07:15 नाश्त्याच्या एकत्रित कॅलरीत समाविष्ट करा",
+              "foodMasterId": "food_001"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "07:15",
+          "label": "नाश्ता",
+          "items": [
+            {
+              "name": "पूर्ण अंडी",
+              "quantity": 3,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_002"
+            },
+            {
+              "name": "सफरचंद",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_004"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "11:00",
+          "label": "दुपारचे मुख्य जेवण",
+          "items": [
+            {
+              "name": "चपाती",
+              "quantity": 2,
+              "unit": "मध्यम नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_005"
+            },
+            {
+              "name": "मसूर डाळ",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_032"
+            },
+            {
+              "name": "शेपू भाजी",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_033"
+            },
+            {
+              "name": "साधे दही",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_008"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "14:00",
+          "label": "दुपारचा स्नॅक",
+          "items": [
+            {
+              "name": "पेरू",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_010"
+            },
+            {
+              "name": "भाजलेले चणे",
+              "quantity": 20,
+              "unit": "g",
+              "weightState": "dry",
+              "category": "food",
+              "foodMasterId": "food_011"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "16:30",
+          "label": "संध्याकाळचा स्नॅक",
+          "items": [
+            {
+              "name": "उकडलेली अंडी",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_018"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "19:45",
+          "label": "रात्रीचे जेवण",
+          "items": [
+            {
+              "name": "चिकन",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_013"
+            },
+            {
+              "name": "ज्वारीची भाकरी",
+              "quantity": 1,
+              "unit": "लहान नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_020"
+            },
+            {
+              "name": "कोबी भाजी",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_034"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        }
+      ],
+      "exercise": {
+        "day": 5,
+        "phase": "हलकी सातत्यपूर्ण हालचाल",
+        "warmUpMin": 7,
+        "walkingMin": 20,
+        "coolDownMin": 5,
+        "strengthExercises": [
+          "Wall Push-up 2 x 8-10",
+          "Glute Bridge 2 x 8 (वेदना नसल्यास)",
+          "Ankle Pumps 2 x 10"
+        ],
+        "avoid": [
+          "उड्या",
+          "धावणे/स्प्रिंट",
+          "वेगाने दिशा बदलणारा रॅकेट खेळ",
+          "खोल बैठका/Squats",
+          "वेदना वाढवणारा व्यायाम"
+        ],
+        "painRule": "व्यायामादरम्यान किंवा नंतर वेदना वाढल्यास थांबा/कमी करा आणि डॉक्टर/फिजिओथेरपिस्टचा सल्ला घ्या."
+      },
+      "dailyTargets": {
+        "caloriesKcal": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "proteinG": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "waterMl": {
+          "min": 2000,
+          "max": 2500,
+          "status": "adjust_for_thirst_weather_sweat_and_clinician_advice"
+        }
+      },
+      "notes": [
+        "तेल/तूप मोजून वापरा; पाककृतीनुसार Calories बदलतात.",
+        "नाश्त्याचे दूध 150 ml रोजच्या कॅलरीत मोजा.",
+        "भात/चपाती/भाकरी यांचे प्रमाण त्या दिवसाच्या मेन्याप्रमाणे ठेवा.",
+        "भूक, अशक्तपणा किंवा चक्कर असल्यास खाणे/व्यायाम जबरदस्तीने चालू ठेवू नका."
+      ]
+    },
+    {
+      "day": 6,
+      "phase": "Phase 1 - Routine",
+      "meals": [
+        {
+          "time": "06:45",
+          "label": "सकाळचे दूध",
+          "items": [
+            {
+              "name": "कमी फॅटचे दूध",
+              "quantity": 150,
+              "unit": "ml",
+              "weightState": "as_served",
+              "category": "food",
+              "preparationNote": "साखर न घालता; 07:15 नाश्त्याच्या एकत्रित कॅलरीत समाविष्ट करा",
+              "foodMasterId": "food_001"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "07:15",
+          "label": "नाश्ता",
+          "items": [
+            {
+              "name": "पूर्ण अंडी",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_002"
+            },
+            {
+              "name": "अंड्याचा पांढरा भाग",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_003"
+            },
+            {
+              "name": "रवा",
+              "quantity": 40,
+              "unit": "g",
+              "weightState": "raw",
+              "category": "food",
+              "preparationNote": "भाज्या घालून उपमा; तेल मोजून",
+              "foodMasterId": "food_035"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "11:00",
+          "label": "दुपारचे मुख्य जेवण",
+          "items": [
+            {
+              "name": "भात",
+              "quantity": 100,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_026"
+            },
+            {
+              "name": "राजमा",
+              "quantity": 180,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_036"
+            },
+            {
+              "name": "पालक भाजी",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_007"
+            },
+            {
+              "name": "साधे दही",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_008"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "14:00",
+          "label": "दुपारचा स्नॅक",
+          "items": [
+            {
+              "name": "पपई",
+              "quantity": 200,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_017"
+            },
+            {
+              "name": "भाजलेले चणे",
+              "quantity": 25,
+              "unit": "g",
+              "weightState": "dry",
+              "category": "food",
+              "foodMasterId": "food_011"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "16:30",
+          "label": "संध्याकाळचा स्नॅक",
+          "items": [
+            {
+              "name": "पनीर",
+              "quantity": 100,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_031"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "19:45",
+          "label": "रात्रीचे जेवण",
+          "items": [
+            {
+              "name": "मासे",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_019"
+            },
+            {
+              "name": "चपाती",
+              "quantity": 1,
+              "unit": "मध्यम नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_005"
+            },
+            {
+              "name": "मिक्स भाजी",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_037"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        }
+      ],
+      "exercise": {
+        "day": 6,
+        "phase": "हलकी सातत्यपूर्ण हालचाल",
+        "warmUpMin": 7,
+        "walkingMin": 20,
+        "coolDownMin": 5,
+        "strengthExercises": [
+          "Wall Push-up 2 x 8-10",
+          "Glute Bridge 2 x 8 (वेदना नसल्यास)",
+          "Ankle Pumps 2 x 10"
+        ],
+        "avoid": [
+          "उड्या",
+          "धावणे/स्प्रिंट",
+          "वेगाने दिशा बदलणारा रॅकेट खेळ",
+          "खोल बैठका/Squats",
+          "वेदना वाढवणारा व्यायाम"
+        ],
+        "painRule": "व्यायामादरम्यान किंवा नंतर वेदना वाढल्यास थांबा/कमी करा आणि डॉक्टर/फिजिओथेरपिस्टचा सल्ला घ्या."
+      },
+      "dailyTargets": {
+        "caloriesKcal": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "proteinG": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "waterMl": {
+          "min": 2000,
+          "max": 2500,
+          "status": "adjust_for_thirst_weather_sweat_and_clinician_advice"
+        }
+      },
+      "notes": [
+        "तेल/तूप मोजून वापरा; पाककृतीनुसार Calories बदलतात.",
+        "नाश्त्याचे दूध 150 ml रोजच्या कॅलरीत मोजा.",
+        "भात/चपाती/भाकरी यांचे प्रमाण त्या दिवसाच्या मेन्याप्रमाणे ठेवा.",
+        "भूक, अशक्तपणा किंवा चक्कर असल्यास खाणे/व्यायाम जबरदस्तीने चालू ठेवू नका."
+      ]
+    },
+    {
+      "day": 7,
+      "phase": "Phase 1 - Routine",
+      "meals": [
+        {
+          "time": "06:45",
+          "label": "सकाळचे दूध",
+          "items": [
+            {
+              "name": "कमी फॅटचे दूध",
+              "quantity": 150,
+              "unit": "ml",
+              "weightState": "as_served",
+              "category": "food",
+              "preparationNote": "साखर न घालता; 07:15 नाश्त्याच्या एकत्रित कॅलरीत समाविष्ट करा",
+              "foodMasterId": "food_001"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "07:15",
+          "label": "नाश्ता",
+          "items": [
+            {
+              "name": "पूर्ण अंडी",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_002"
+            },
+            {
+              "name": "अंड्याचा पांढरा भाग",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_003"
+            },
+            {
+              "name": "मूग डाळ",
+              "quantity": 60,
+              "unit": "g",
+              "weightState": "dry",
+              "category": "food",
+              "preparationNote": "भिजवून 2 चिल्ले; कमी तेल",
+              "foodMasterId": "food_006"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "11:00",
+          "label": "दुपारचे मुख्य जेवण",
+          "items": [
+            {
+              "name": "चपाती",
+              "quantity": 2,
+              "unit": "मध्यम नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_005"
+            },
+            {
+              "name": "वरण",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_038"
+            },
+            {
+              "name": "मेथी भाजी",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_016"
+            },
+            {
+              "name": "साधे दही",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_008"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "14:00",
+          "label": "दुपारचा स्नॅक",
+          "items": [
+            {
+              "name": "सफरचंद",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_004"
+            },
+            {
+              "name": "भाजलेले चणे",
+              "quantity": 20,
+              "unit": "g",
+              "weightState": "dry",
+              "category": "food",
+              "foodMasterId": "food_011"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "16:30",
+          "label": "संध्याकाळचा स्नॅक",
+          "items": [
+            {
+              "name": "उकडलेली अंडी",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_018"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "19:45",
+          "label": "रात्रीचे जेवण",
+          "items": [
+            {
+              "name": "चिकन",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_013"
+            },
+            {
+              "name": "भात",
+              "quantity": 100,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_026"
+            },
+            {
+              "name": "कोशिंबीर",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_024"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        }
+      ],
+      "exercise": {
+        "day": 7,
+        "phase": "हलकी सातत्यपूर्ण हालचाल",
+        "warmUpMin": 7,
+        "walkingMin": 20,
+        "coolDownMin": 5,
+        "strengthExercises": [
+          "Wall Push-up 2 x 8-10",
+          "Glute Bridge 2 x 8 (वेदना नसल्यास)",
+          "Ankle Pumps 2 x 10"
+        ],
+        "avoid": [
+          "उड्या",
+          "धावणे/स्प्रिंट",
+          "वेगाने दिशा बदलणारा रॅकेट खेळ",
+          "खोल बैठका/Squats",
+          "वेदना वाढवणारा व्यायाम"
+        ],
+        "painRule": "व्यायामादरम्यान किंवा नंतर वेदना वाढल्यास थांबा/कमी करा आणि डॉक्टर/फिजिओथेरपिस्टचा सल्ला घ्या."
+      },
+      "dailyTargets": {
+        "caloriesKcal": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "proteinG": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "waterMl": {
+          "min": 2000,
+          "max": 2500,
+          "status": "adjust_for_thirst_weather_sweat_and_clinician_advice"
+        }
+      },
+      "notes": [
+        "तेल/तूप मोजून वापरा; पाककृतीनुसार Calories बदलतात.",
+        "नाश्त्याचे दूध 150 ml रोजच्या कॅलरीत मोजा.",
+        "भात/चपाती/भाकरी यांचे प्रमाण त्या दिवसाच्या मेन्याप्रमाणे ठेवा.",
+        "भूक, अशक्तपणा किंवा चक्कर असल्यास खाणे/व्यायाम जबरदस्तीने चालू ठेवू नका."
+      ]
+    },
+    {
+      "day": 8,
+      "phase": "Phase 2 - Consistency",
+      "meals": [
+        {
+          "time": "06:45",
+          "label": "सकाळचे दूध",
+          "items": [
+            {
+              "name": "कमी फॅटचे दूध",
+              "quantity": 150,
+              "unit": "ml",
+              "weightState": "as_served",
+              "category": "food",
+              "preparationNote": "साखर न घालता; 07:15 नाश्त्याच्या एकत्रित कॅलरीत समाविष्ट करा",
+              "foodMasterId": "food_001"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "07:15",
+          "label": "नाश्ता",
+          "items": [
+            {
+              "name": "पूर्ण अंडी",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_002"
+            },
+            {
+              "name": "अंड्याचा पांढरा भाग",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_003"
+            },
+            {
+              "name": "ओट्स",
+              "quantity": 40,
+              "unit": "g",
+              "weightState": "raw",
+              "category": "food",
+              "foodMasterId": "food_028"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "11:00",
+          "label": "दुपारचे मुख्य जेवण",
+          "items": [
+            {
+              "name": "चपाती",
+              "quantity": 2,
+              "unit": "मध्यम नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_005"
+            },
+            {
+              "name": "मटकी उसळ",
+              "quantity": 180,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_012"
+            },
+            {
+              "name": "पालक भाजी",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_007"
+            },
+            {
+              "name": "साधे दही",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_008"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "14:00",
+          "label": "दुपारचा स्नॅक",
+          "items": [
+            {
+              "name": "पेरू",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_010"
+            },
+            {
+              "name": "भाजलेले चणे",
+              "quantity": 25,
+              "unit": "g",
+              "weightState": "dry",
+              "category": "food",
+              "foodMasterId": "food_011"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "16:30",
+          "label": "संध्याकाळचा स्नॅक",
+          "items": [
+            {
+              "name": "उकडलेली अंडी",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_018"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "19:45",
+          "label": "रात्रीचे जेवण",
+          "items": [
+            {
+              "name": "मासे",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_019"
+            },
+            {
+              "name": "चपाती",
+              "quantity": 1,
+              "unit": "मध्यम नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_005"
+            },
+            {
+              "name": "फ्लॉवर भाजी",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_027"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        }
+      ],
+      "exercise": {
+        "day": 8,
+        "phase": "कमी धक्क्याचा व्यायाम",
+        "warmUpMin": 7,
+        "walkingMin": 20,
+        "coolDownMin": 5,
+        "strengthExercises": [
+          "Wall Push-up 2 x 10",
+          "Seated March 2 x 10",
+          "Glute Bridge 2 x 8 (वेदना नसल्यास)"
+        ],
+        "avoid": [
+          "उड्या",
+          "धावणे/स्प्रिंट",
+          "वेगाने दिशा बदलणारा रॅकेट खेळ",
+          "खोल बैठका/Squats",
+          "वेदना वाढवणारा व्यायाम"
+        ],
+        "painRule": "व्यायामादरम्यान किंवा नंतर वेदना वाढल्यास थांबा/कमी करा आणि डॉक्टर/फिजिओथेरपिस्टचा सल्ला घ्या."
+      },
+      "dailyTargets": {
+        "caloriesKcal": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "proteinG": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "waterMl": {
+          "min": 2000,
+          "max": 2500,
+          "status": "adjust_for_thirst_weather_sweat_and_clinician_advice"
+        }
+      },
+      "notes": [
+        "तेल/तूप मोजून वापरा; पाककृतीनुसार Calories बदलतात.",
+        "नाश्त्याचे दूध 150 ml रोजच्या कॅलरीत मोजा.",
+        "भात/चपाती/भाकरी यांचे प्रमाण त्या दिवसाच्या मेन्याप्रमाणे ठेवा.",
+        "भूक, अशक्तपणा किंवा चक्कर असल्यास खाणे/व्यायाम जबरदस्तीने चालू ठेवू नका."
+      ]
+    },
+    {
+      "day": 9,
+      "phase": "Phase 2 - Consistency",
+      "meals": [
+        {
+          "time": "06:45",
+          "label": "सकाळचे दूध",
+          "items": [
+            {
+              "name": "कमी फॅटचे दूध",
+              "quantity": 150,
+              "unit": "ml",
+              "weightState": "as_served",
+              "category": "food",
+              "preparationNote": "साखर न घालता; 07:15 नाश्त्याच्या एकत्रित कॅलरीत समाविष्ट करा",
+              "foodMasterId": "food_001"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "07:15",
+          "label": "नाश्ता",
+          "items": [
+            {
+              "name": "पूर्ण अंडी",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_002"
+            },
+            {
+              "name": "अंड्याचा पांढरा भाग",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_003"
+            },
+            {
+              "name": "बेसन",
+              "quantity": 50,
+              "unit": "g",
+              "weightState": "raw",
+              "category": "food",
+              "preparationNote": "2 छोटे चिल्ले",
+              "foodMasterId": "food_022"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "11:00",
+          "label": "दुपारचे मुख्य जेवण",
+          "items": [
+            {
+              "name": "चपाती",
+              "quantity": 2,
+              "unit": "मध्यम नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_005"
+            },
+            {
+              "name": "चणा उसळ",
+              "quantity": 180,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_039"
+            },
+            {
+              "name": "मेथी भाजी",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_016"
+            },
+            {
+              "name": "साधे दही",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_008"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "14:00",
+          "label": "दुपारचा स्नॅक",
+          "items": [
+            {
+              "name": "पपई",
+              "quantity": 200,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_017"
+            },
+            {
+              "name": "साधे दही",
+              "quantity": 100,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_008"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "16:30",
+          "label": "संध्याकाळचा स्नॅक",
+          "items": [
+            {
+              "name": "पनीर",
+              "quantity": 100,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_031"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "19:45",
+          "label": "रात्रीचे जेवण",
+          "items": [
+            {
+              "name": "चिकन",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_013"
+            },
+            {
+              "name": "भात",
+              "quantity": 100,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_026"
+            },
+            {
+              "name": "भेंडी भाजी",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_014"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        }
+      ],
+      "exercise": {
+        "day": 9,
+        "phase": "कमी धक्क्याचा व्यायाम",
+        "warmUpMin": 7,
+        "walkingMin": 20,
+        "coolDownMin": 5,
+        "strengthExercises": [
+          "Wall Push-up 2 x 10",
+          "Seated March 2 x 10",
+          "Glute Bridge 2 x 8 (वेदना नसल्यास)"
+        ],
+        "avoid": [
+          "उड्या",
+          "धावणे/स्प्रिंट",
+          "वेगाने दिशा बदलणारा रॅकेट खेळ",
+          "खोल बैठका/Squats",
+          "वेदना वाढवणारा व्यायाम"
+        ],
+        "painRule": "व्यायामादरम्यान किंवा नंतर वेदना वाढल्यास थांबा/कमी करा आणि डॉक्टर/फिजिओथेरपिस्टचा सल्ला घ्या."
+      },
+      "dailyTargets": {
+        "caloriesKcal": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "proteinG": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "waterMl": {
+          "min": 2000,
+          "max": 2500,
+          "status": "adjust_for_thirst_weather_sweat_and_clinician_advice"
+        }
+      },
+      "notes": [
+        "तेल/तूप मोजून वापरा; पाककृतीनुसार Calories बदलतात.",
+        "नाश्त्याचे दूध 150 ml रोजच्या कॅलरीत मोजा.",
+        "भात/चपाती/भाकरी यांचे प्रमाण त्या दिवसाच्या मेन्याप्रमाणे ठेवा.",
+        "भूक, अशक्तपणा किंवा चक्कर असल्यास खाणे/व्यायाम जबरदस्तीने चालू ठेवू नका."
+      ]
+    },
+    {
+      "day": 10,
+      "phase": "Phase 2 - Consistency",
+      "meals": [
+        {
+          "time": "06:45",
+          "label": "सकाळचे दूध",
+          "items": [
+            {
+              "name": "कमी फॅटचे दूध",
+              "quantity": 150,
+              "unit": "ml",
+              "weightState": "as_served",
+              "category": "food",
+              "preparationNote": "साखर न घालता; 07:15 नाश्त्याच्या एकत्रित कॅलरीत समाविष्ट करा",
+              "foodMasterId": "food_001"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "07:15",
+          "label": "नाश्ता",
+          "items": [
+            {
+              "name": "पूर्ण अंडी",
+              "quantity": 3,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_002"
+            },
+            {
+              "name": "सफरचंद",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_004"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "11:00",
+          "label": "दुपारचे मुख्य जेवण",
+          "items": [
+            {
+              "name": "ज्वारीची भाकरी",
+              "quantity": 1,
+              "unit": "मध्यम नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_020"
+            },
+            {
+              "name": "मसूर डाळ",
+              "quantity": 180,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_032"
+            },
+            {
+              "name": "पालक भाजी",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_007"
+            },
+            {
+              "name": "साधे दही",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_008"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "14:00",
+          "label": "दुपारचा स्नॅक",
+          "items": [
+            {
+              "name": "सफरचंद",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_004"
+            },
+            {
+              "name": "भाजलेले चणे",
+              "quantity": 25,
+              "unit": "g",
+              "weightState": "dry",
+              "category": "food",
+              "foodMasterId": "food_011"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "16:30",
+          "label": "संध्याकाळचा स्नॅक",
+          "items": [
+            {
+              "name": "मूग उसळ",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_040"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "19:45",
+          "label": "रात्रीचे जेवण",
+          "items": [
+            {
+              "name": "मासे",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_019"
+            },
+            {
+              "name": "चपाती",
+              "quantity": 1,
+              "unit": "मध्यम नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_005"
+            },
+            {
+              "name": "दुधी भाजी",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_021"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        }
+      ],
+      "exercise": {
+        "day": 10,
+        "phase": "कमी धक्क्याचा व्यायाम",
+        "warmUpMin": 7,
+        "walkingMin": 20,
+        "coolDownMin": 5,
+        "strengthExercises": [
+          "Wall Push-up 2 x 10",
+          "Seated March 2 x 10",
+          "Glute Bridge 2 x 8 (वेदना नसल्यास)"
+        ],
+        "avoid": [
+          "उड्या",
+          "धावणे/स्प्रिंट",
+          "वेगाने दिशा बदलणारा रॅकेट खेळ",
+          "खोल बैठका/Squats",
+          "वेदना वाढवणारा व्यायाम"
+        ],
+        "painRule": "व्यायामादरम्यान किंवा नंतर वेदना वाढल्यास थांबा/कमी करा आणि डॉक्टर/फिजिओथेरपिस्टचा सल्ला घ्या."
+      },
+      "dailyTargets": {
+        "caloriesKcal": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "proteinG": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "waterMl": {
+          "min": 2000,
+          "max": 2500,
+          "status": "adjust_for_thirst_weather_sweat_and_clinician_advice"
+        }
+      },
+      "notes": [
+        "तेल/तूप मोजून वापरा; पाककृतीनुसार Calories बदलतात.",
+        "नाश्त्याचे दूध 150 ml रोजच्या कॅलरीत मोजा.",
+        "भात/चपाती/भाकरी यांचे प्रमाण त्या दिवसाच्या मेन्याप्रमाणे ठेवा.",
+        "भूक, अशक्तपणा किंवा चक्कर असल्यास खाणे/व्यायाम जबरदस्तीने चालू ठेवू नका."
+      ]
+    },
+    {
+      "day": 11,
+      "phase": "Phase 2 - Consistency",
+      "meals": [
+        {
+          "time": "06:45",
+          "label": "सकाळचे दूध",
+          "items": [
+            {
+              "name": "कमी फॅटचे दूध",
+              "quantity": 150,
+              "unit": "ml",
+              "weightState": "as_served",
+              "category": "food",
+              "preparationNote": "साखर न घालता; 07:15 नाश्त्याच्या एकत्रित कॅलरीत समाविष्ट करा",
+              "foodMasterId": "food_001"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "07:15",
+          "label": "नाश्ता",
+          "items": [
+            {
+              "name": "पूर्ण अंडी",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_002"
+            },
+            {
+              "name": "अंड्याचा पांढरा भाग",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_003"
+            },
+            {
+              "name": "पोहे",
+              "quantity": 40,
+              "unit": "g",
+              "weightState": "raw",
+              "category": "food",
+              "foodMasterId": "food_015"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "11:00",
+          "label": "दुपारचे मुख्य जेवण",
+          "items": [
+            {
+              "name": "चपाती",
+              "quantity": 2,
+              "unit": "मध्यम नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_005"
+            },
+            {
+              "name": "पालक पनीर",
+              "quantity": 180,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "preparationNote": "पनीर 100g",
+              "foodMasterId": "food_023"
+            },
+            {
+              "name": "मूग डाळ",
+              "quantity": 100,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_006"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "14:00",
+          "label": "दुपारचा स्नॅक",
+          "items": [
+            {
+              "name": "पेरू",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_010"
+            },
+            {
+              "name": "साधे दही",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_008"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "16:30",
+          "label": "संध्याकाळचा स्नॅक",
+          "items": [
+            {
+              "name": "उकडलेली अंडी",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_018"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "19:45",
+          "label": "रात्रीचे जेवण",
+          "items": [
+            {
+              "name": "चिकन",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_013"
+            },
+            {
+              "name": "चपाती",
+              "quantity": 1,
+              "unit": "मध्यम नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_005"
+            },
+            {
+              "name": "कोबी भाजी",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_034"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        }
+      ],
+      "exercise": {
+        "day": 11,
+        "phase": "हळूहळू वेळ वाढवणे",
+        "warmUpMin": 7,
+        "walkingMin": 25,
+        "coolDownMin": 5,
+        "strengthExercises": [
+          "Wall Push-up 2 x 10",
+          "Seated March 2 x 10",
+          "Calf Raise 2 x 8 (आधार घेऊन, वेदना नसल्यास)"
+        ],
+        "avoid": [
+          "उड्या",
+          "धावणे/स्प्रिंट",
+          "वेगाने दिशा बदलणारा रॅकेट खेळ",
+          "खोल बैठका/Squats",
+          "वेदना वाढवणारा व्यायाम"
+        ],
+        "painRule": "व्यायामादरम्यान किंवा नंतर वेदना वाढल्यास थांबा/कमी करा आणि डॉक्टर/फिजिओथेरपिस्टचा सल्ला घ्या."
+      },
+      "dailyTargets": {
+        "caloriesKcal": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "proteinG": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "waterMl": {
+          "min": 2000,
+          "max": 2500,
+          "status": "adjust_for_thirst_weather_sweat_and_clinician_advice"
+        }
+      },
+      "notes": [
+        "तेल/तूप मोजून वापरा; पाककृतीनुसार Calories बदलतात.",
+        "नाश्त्याचे दूध 150 ml रोजच्या कॅलरीत मोजा.",
+        "भात/चपाती/भाकरी यांचे प्रमाण त्या दिवसाच्या मेन्याप्रमाणे ठेवा.",
+        "भूक, अशक्तपणा किंवा चक्कर असल्यास खाणे/व्यायाम जबरदस्तीने चालू ठेवू नका."
+      ]
+    },
+    {
+      "day": 12,
+      "phase": "Phase 2 - Consistency",
+      "meals": [
+        {
+          "time": "06:45",
+          "label": "सकाळचे दूध",
+          "items": [
+            {
+              "name": "कमी फॅटचे दूध",
+              "quantity": 150,
+              "unit": "ml",
+              "weightState": "as_served",
+              "category": "food",
+              "preparationNote": "साखर न घालता; 07:15 नाश्त्याच्या एकत्रित कॅलरीत समाविष्ट करा",
+              "foodMasterId": "food_001"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "07:15",
+          "label": "नाश्ता",
+          "items": [
+            {
+              "name": "पूर्ण अंडी",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_002"
+            },
+            {
+              "name": "अंड्याचा पांढरा भाग",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_003"
+            },
+            {
+              "name": "ओट्स",
+              "quantity": 40,
+              "unit": "g",
+              "weightState": "raw",
+              "category": "food",
+              "foodMasterId": "food_028"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "11:00",
+          "label": "दुपारचे मुख्य जेवण",
+          "items": [
+            {
+              "name": "चपाती",
+              "quantity": 2,
+              "unit": "मध्यम नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_005"
+            },
+            {
+              "name": "राजमा",
+              "quantity": 180,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_036"
+            },
+            {
+              "name": "मेथी भाजी",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_016"
+            },
+            {
+              "name": "साधे दही",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_008"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "14:00",
+          "label": "दुपारचा स्नॅक",
+          "items": [
+            {
+              "name": "संत्रे",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_030"
+            },
+            {
+              "name": "भाजलेले चणे",
+              "quantity": 25,
+              "unit": "g",
+              "weightState": "dry",
+              "category": "food",
+              "foodMasterId": "food_011"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "16:30",
+          "label": "संध्याकाळचा स्नॅक",
+          "items": [
+            {
+              "name": "पनीर",
+              "quantity": 100,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_031"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "19:45",
+          "label": "रात्रीचे जेवण",
+          "items": [
+            {
+              "name": "मासे",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_019"
+            },
+            {
+              "name": "चपाती",
+              "quantity": 1,
+              "unit": "मध्यम नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_005"
+            },
+            {
+              "name": "मिक्स भाजी",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_037"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        }
+      ],
+      "exercise": {
+        "day": 12,
+        "phase": "हळूहळू वेळ वाढवणे",
+        "warmUpMin": 7,
+        "walkingMin": 25,
+        "coolDownMin": 5,
+        "strengthExercises": [
+          "Wall Push-up 2 x 10",
+          "Seated March 2 x 10",
+          "Calf Raise 2 x 8 (आधार घेऊन, वेदना नसल्यास)"
+        ],
+        "avoid": [
+          "उड्या",
+          "धावणे/स्प्रिंट",
+          "वेगाने दिशा बदलणारा रॅकेट खेळ",
+          "खोल बैठका/Squats",
+          "वेदना वाढवणारा व्यायाम"
+        ],
+        "painRule": "व्यायामादरम्यान किंवा नंतर वेदना वाढल्यास थांबा/कमी करा आणि डॉक्टर/फिजिओथेरपिस्टचा सल्ला घ्या."
+      },
+      "dailyTargets": {
+        "caloriesKcal": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "proteinG": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "waterMl": {
+          "min": 2000,
+          "max": 2500,
+          "status": "adjust_for_thirst_weather_sweat_and_clinician_advice"
+        }
+      },
+      "notes": [
+        "तेल/तूप मोजून वापरा; पाककृतीनुसार Calories बदलतात.",
+        "नाश्त्याचे दूध 150 ml रोजच्या कॅलरीत मोजा.",
+        "भात/चपाती/भाकरी यांचे प्रमाण त्या दिवसाच्या मेन्याप्रमाणे ठेवा.",
+        "भूक, अशक्तपणा किंवा चक्कर असल्यास खाणे/व्यायाम जबरदस्तीने चालू ठेवू नका."
+      ]
+    },
+    {
+      "day": 13,
+      "phase": "Phase 2 - Consistency",
+      "meals": [
+        {
+          "time": "06:45",
+          "label": "सकाळचे दूध",
+          "items": [
+            {
+              "name": "कमी फॅटचे दूध",
+              "quantity": 150,
+              "unit": "ml",
+              "weightState": "as_served",
+              "category": "food",
+              "preparationNote": "साखर न घालता; 07:15 नाश्त्याच्या एकत्रित कॅलरीत समाविष्ट करा",
+              "foodMasterId": "food_001"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "07:15",
+          "label": "नाश्ता",
+          "items": [
+            {
+              "name": "पूर्ण अंडी",
+              "quantity": 3,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_002"
+            },
+            {
+              "name": "सफरचंद",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_004"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "11:00",
+          "label": "दुपारचे मुख्य जेवण",
+          "items": [
+            {
+              "name": "भात",
+              "quantity": 100,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_026"
+            },
+            {
+              "name": "मूग डाळ",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_006"
+            },
+            {
+              "name": "पालक भाजी",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_007"
+            },
+            {
+              "name": "साधे दही",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_008"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "14:00",
+          "label": "दुपारचा स्नॅक",
+          "items": [
+            {
+              "name": "पपई",
+              "quantity": 200,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_017"
+            },
+            {
+              "name": "भाजलेले चणे",
+              "quantity": 25,
+              "unit": "g",
+              "weightState": "dry",
+              "category": "food",
+              "foodMasterId": "food_011"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "16:30",
+          "label": "संध्याकाळचा स्नॅक",
+          "items": [
+            {
+              "name": "उकडलेली अंडी",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_018"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "19:45",
+          "label": "रात्रीचे जेवण",
+          "items": [
+            {
+              "name": "चिकन",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_013"
+            },
+            {
+              "name": "चपाती",
+              "quantity": 1,
+              "unit": "मध्यम नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_005"
+            },
+            {
+              "name": "भेंडी भाजी",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_014"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        }
+      ],
+      "exercise": {
+        "day": 13,
+        "phase": "हळूहळू वेळ वाढवणे",
+        "warmUpMin": 7,
+        "walkingMin": 25,
+        "coolDownMin": 5,
+        "strengthExercises": [
+          "Wall Push-up 2 x 10",
+          "Seated March 2 x 10",
+          "Calf Raise 2 x 8 (आधार घेऊन, वेदना नसल्यास)"
+        ],
+        "avoid": [
+          "उड्या",
+          "धावणे/स्प्रिंट",
+          "वेगाने दिशा बदलणारा रॅकेट खेळ",
+          "खोल बैठका/Squats",
+          "वेदना वाढवणारा व्यायाम"
+        ],
+        "painRule": "व्यायामादरम्यान किंवा नंतर वेदना वाढल्यास थांबा/कमी करा आणि डॉक्टर/फिजिओथेरपिस्टचा सल्ला घ्या."
+      },
+      "dailyTargets": {
+        "caloriesKcal": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "proteinG": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "waterMl": {
+          "min": 2000,
+          "max": 2500,
+          "status": "adjust_for_thirst_weather_sweat_and_clinician_advice"
+        }
+      },
+      "notes": [
+        "तेल/तूप मोजून वापरा; पाककृतीनुसार Calories बदलतात.",
+        "नाश्त्याचे दूध 150 ml रोजच्या कॅलरीत मोजा.",
+        "भात/चपाती/भाकरी यांचे प्रमाण त्या दिवसाच्या मेन्याप्रमाणे ठेवा.",
+        "भूक, अशक्तपणा किंवा चक्कर असल्यास खाणे/व्यायाम जबरदस्तीने चालू ठेवू नका."
+      ]
+    },
+    {
+      "day": 14,
+      "phase": "Phase 2 - Consistency",
+      "meals": [
+        {
+          "time": "06:45",
+          "label": "सकाळचे दूध",
+          "items": [
+            {
+              "name": "कमी फॅटचे दूध",
+              "quantity": 150,
+              "unit": "ml",
+              "weightState": "as_served",
+              "category": "food",
+              "preparationNote": "साखर न घालता; 07:15 नाश्त्याच्या एकत्रित कॅलरीत समाविष्ट करा",
+              "foodMasterId": "food_001"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "07:15",
+          "label": "नाश्ता",
+          "items": [
+            {
+              "name": "मूग डाळ",
+              "quantity": 60,
+              "unit": "g",
+              "weightState": "dry",
+              "category": "food",
+              "preparationNote": "2 चिल्ले",
+              "foodMasterId": "food_006"
+            },
+            {
+              "name": "पूर्ण अंडी",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_002"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "11:00",
+          "label": "दुपारचे मुख्य जेवण",
+          "items": [
+            {
+              "name": "ज्वारीची भाकरी",
+              "quantity": 1,
+              "unit": "मध्यम नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_020"
+            },
+            {
+              "name": "मटकी उसळ",
+              "quantity": 180,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_012"
+            },
+            {
+              "name": "पालक भाजी",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_007"
+            },
+            {
+              "name": "साधे दही",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_008"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "14:00",
+          "label": "दुपारचा स्नॅक",
+          "items": [
+            {
+              "name": "सफरचंद",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_004"
+            },
+            {
+              "name": "साधे दही",
+              "quantity": 100,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_008"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "16:30",
+          "label": "संध्याकाळचा स्नॅक",
+          "items": [
+            {
+              "name": "पनीर",
+              "quantity": 100,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_031"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "19:45",
+          "label": "रात्रीचे जेवण",
+          "items": [
+            {
+              "name": "मासे",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_019"
+            },
+            {
+              "name": "भात",
+              "quantity": 100,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_026"
+            },
+            {
+              "name": "कोशिंबीर",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_024"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        }
+      ],
+      "exercise": {
+        "day": 14,
+        "phase": "हळूहळू वेळ वाढवणे",
+        "warmUpMin": 7,
+        "walkingMin": 25,
+        "coolDownMin": 5,
+        "strengthExercises": [
+          "Wall Push-up 2 x 10",
+          "Seated March 2 x 10",
+          "Calf Raise 2 x 8 (आधार घेऊन, वेदना नसल्यास)"
+        ],
+        "avoid": [
+          "उड्या",
+          "धावणे/स्प्रिंट",
+          "वेगाने दिशा बदलणारा रॅकेट खेळ",
+          "खोल बैठका/Squats",
+          "वेदना वाढवणारा व्यायाम"
+        ],
+        "painRule": "व्यायामादरम्यान किंवा नंतर वेदना वाढल्यास थांबा/कमी करा आणि डॉक्टर/फिजिओथेरपिस्टचा सल्ला घ्या."
+      },
+      "dailyTargets": {
+        "caloriesKcal": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "proteinG": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "waterMl": {
+          "min": 2000,
+          "max": 2500,
+          "status": "adjust_for_thirst_weather_sweat_and_clinician_advice"
+        }
+      },
+      "notes": [
+        "तेल/तूप मोजून वापरा; पाककृतीनुसार Calories बदलतात.",
+        "नाश्त्याचे दूध 150 ml रोजच्या कॅलरीत मोजा.",
+        "भात/चपाती/भाकरी यांचे प्रमाण त्या दिवसाच्या मेन्याप्रमाणे ठेवा.",
+        "भूक, अशक्तपणा किंवा चक्कर असल्यास खाणे/व्यायाम जबरदस्तीने चालू ठेवू नका."
+      ]
+    },
+    {
+      "day": 15,
+      "phase": "Phase 3 - Progress",
+      "meals": [
+        {
+          "time": "06:45",
+          "label": "सकाळचे दूध",
+          "items": [
+            {
+              "name": "कमी फॅटचे दूध",
+              "quantity": 150,
+              "unit": "ml",
+              "weightState": "as_served",
+              "category": "food",
+              "preparationNote": "साखर न घालता; 07:15 नाश्त्याच्या एकत्रित कॅलरीत समाविष्ट करा",
+              "foodMasterId": "food_001"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "07:15",
+          "label": "नाश्ता",
+          "items": [
+            {
+              "name": "पूर्ण अंडी",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_002"
+            },
+            {
+              "name": "अंड्याचा पांढरा भाग",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_003"
+            },
+            {
+              "name": "पोहे",
+              "quantity": 40,
+              "unit": "g",
+              "weightState": "raw",
+              "category": "food",
+              "foodMasterId": "food_015"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "11:00",
+          "label": "दुपारचे मुख्य जेवण",
+          "items": [
+            {
+              "name": "चपाती",
+              "quantity": 2,
+              "unit": "मध्यम नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_005"
+            },
+            {
+              "name": "मसूर डाळ",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_032"
+            },
+            {
+              "name": "मेथी भाजी",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_016"
+            },
+            {
+              "name": "साधे दही",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_008"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "14:00",
+          "label": "दुपारचा स्नॅक",
+          "items": [
+            {
+              "name": "पेरू",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_010"
+            },
+            {
+              "name": "भाजलेले चणे",
+              "quantity": 25,
+              "unit": "g",
+              "weightState": "dry",
+              "category": "food",
+              "foodMasterId": "food_011"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "16:30",
+          "label": "संध्याकाळचा स्नॅक",
+          "items": [
+            {
+              "name": "उकडलेली अंडी",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_018"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "19:45",
+          "label": "रात्रीचे जेवण",
+          "items": [
+            {
+              "name": "चिकन",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_013"
+            },
+            {
+              "name": "चपाती",
+              "quantity": 1,
+              "unit": "मध्यम नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_005"
+            },
+            {
+              "name": "पालक भाजी",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_007"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        }
+      ],
+      "exercise": {
+        "day": 15,
+        "phase": "सातत्य व सौम्य Strength",
+        "warmUpMin": 7,
+        "walkingMin": 25,
+        "coolDownMin": 5,
+        "strengthExercises": [
+          "Wall Push-up 2 x 10",
+          "Glute Bridge 2 x 10 (वेदना नसल्यास)",
+          "Seated March 2 x 10"
+        ],
+        "avoid": [
+          "उड्या",
+          "धावणे/स्प्रिंट",
+          "वेगाने दिशा बदलणारा रॅकेट खेळ",
+          "खोल बैठका/Squats",
+          "वेदना वाढवणारा व्यायाम"
+        ],
+        "painRule": "व्यायामादरम्यान किंवा नंतर वेदना वाढल्यास थांबा/कमी करा आणि डॉक्टर/फिजिओथेरपिस्टचा सल्ला घ्या."
+      },
+      "dailyTargets": {
+        "caloriesKcal": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "proteinG": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "waterMl": {
+          "min": 2000,
+          "max": 2500,
+          "status": "adjust_for_thirst_weather_sweat_and_clinician_advice"
+        }
+      },
+      "notes": [
+        "तेल/तूप मोजून वापरा; पाककृतीनुसार Calories बदलतात.",
+        "नाश्त्याचे दूध 150 ml रोजच्या कॅलरीत मोजा.",
+        "भात/चपाती/भाकरी यांचे प्रमाण त्या दिवसाच्या मेन्याप्रमाणे ठेवा.",
+        "भूक, अशक्तपणा किंवा चक्कर असल्यास खाणे/व्यायाम जबरदस्तीने चालू ठेवू नका."
+      ]
+    },
+    {
+      "day": 16,
+      "phase": "Phase 3 - Progress",
+      "meals": [
+        {
+          "time": "06:45",
+          "label": "सकाळचे दूध",
+          "items": [
+            {
+              "name": "कमी फॅटचे दूध",
+              "quantity": 150,
+              "unit": "ml",
+              "weightState": "as_served",
+              "category": "food",
+              "preparationNote": "साखर न घालता; 07:15 नाश्त्याच्या एकत्रित कॅलरीत समाविष्ट करा",
+              "foodMasterId": "food_001"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "07:15",
+          "label": "नाश्ता",
+          "items": [
+            {
+              "name": "पूर्ण अंडी",
+              "quantity": 3,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_002"
+            },
+            {
+              "name": "सफरचंद",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_004"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "11:00",
+          "label": "दुपारचे मुख्य जेवण",
+          "items": [
+            {
+              "name": "ज्वारीची भाकरी",
+              "quantity": 1,
+              "unit": "लहान नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_020"
+            },
+            {
+              "name": "चणा उसळ",
+              "quantity": 180,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_039"
+            },
+            {
+              "name": "पालक भाजी",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_007"
+            },
+            {
+              "name": "साधे दही",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_008"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "14:00",
+          "label": "दुपारचा स्नॅक",
+          "items": [
+            {
+              "name": "पपई",
+              "quantity": 200,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_017"
+            },
+            {
+              "name": "भाजलेले चणे",
+              "quantity": 25,
+              "unit": "g",
+              "weightState": "dry",
+              "category": "food",
+              "foodMasterId": "food_011"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "16:30",
+          "label": "संध्याकाळचा स्नॅक",
+          "items": [
+            {
+              "name": "पनीर",
+              "quantity": 100,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_031"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "19:45",
+          "label": "रात्रीचे जेवण",
+          "items": [
+            {
+              "name": "मासे",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_019"
+            },
+            {
+              "name": "चपाती",
+              "quantity": 1,
+              "unit": "मध्यम नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_005"
+            },
+            {
+              "name": "फ्लॉवर भाजी",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_027"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        }
+      ],
+      "exercise": {
+        "day": 16,
+        "phase": "सातत्य व सौम्य Strength",
+        "warmUpMin": 7,
+        "walkingMin": 25,
+        "coolDownMin": 5,
+        "strengthExercises": [
+          "Wall Push-up 2 x 10",
+          "Glute Bridge 2 x 10 (वेदना नसल्यास)",
+          "Seated March 2 x 10"
+        ],
+        "avoid": [
+          "उड्या",
+          "धावणे/स्प्रिंट",
+          "वेगाने दिशा बदलणारा रॅकेट खेळ",
+          "खोल बैठका/Squats",
+          "वेदना वाढवणारा व्यायाम"
+        ],
+        "painRule": "व्यायामादरम्यान किंवा नंतर वेदना वाढल्यास थांबा/कमी करा आणि डॉक्टर/फिजिओथेरपिस्टचा सल्ला घ्या."
+      },
+      "dailyTargets": {
+        "caloriesKcal": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "proteinG": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "waterMl": {
+          "min": 2000,
+          "max": 2500,
+          "status": "adjust_for_thirst_weather_sweat_and_clinician_advice"
+        }
+      },
+      "notes": [
+        "तेल/तूप मोजून वापरा; पाककृतीनुसार Calories बदलतात.",
+        "नाश्त्याचे दूध 150 ml रोजच्या कॅलरीत मोजा.",
+        "भात/चपाती/भाकरी यांचे प्रमाण त्या दिवसाच्या मेन्याप्रमाणे ठेवा.",
+        "भूक, अशक्तपणा किंवा चक्कर असल्यास खाणे/व्यायाम जबरदस्तीने चालू ठेवू नका."
+      ]
+    },
+    {
+      "day": 17,
+      "phase": "Phase 3 - Progress",
+      "meals": [
+        {
+          "time": "06:45",
+          "label": "सकाळचे दूध",
+          "items": [
+            {
+              "name": "कमी फॅटचे दूध",
+              "quantity": 150,
+              "unit": "ml",
+              "weightState": "as_served",
+              "category": "food",
+              "preparationNote": "साखर न घालता; 07:15 नाश्त्याच्या एकत्रित कॅलरीत समाविष्ट करा",
+              "foodMasterId": "food_001"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "07:15",
+          "label": "नाश्ता",
+          "items": [
+            {
+              "name": "पूर्ण अंडी",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_002"
+            },
+            {
+              "name": "अंड्याचा पांढरा भाग",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_003"
+            },
+            {
+              "name": "ओट्स",
+              "quantity": 40,
+              "unit": "g",
+              "weightState": "raw",
+              "category": "food",
+              "foodMasterId": "food_028"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "11:00",
+          "label": "दुपारचे मुख्य जेवण",
+          "items": [
+            {
+              "name": "भात",
+              "quantity": 100,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_026"
+            },
+            {
+              "name": "मटकी उसळ",
+              "quantity": 180,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_012"
+            },
+            {
+              "name": "साधे दही",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_008"
+            },
+            {
+              "name": "भाजी",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_041"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "14:00",
+          "label": "दुपारचा स्नॅक",
+          "items": [
+            {
+              "name": "संत्रे",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_030"
+            },
+            {
+              "name": "भाजलेले चणे",
+              "quantity": 25,
+              "unit": "g",
+              "weightState": "dry",
+              "category": "food",
+              "foodMasterId": "food_011"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "16:30",
+          "label": "संध्याकाळचा स्नॅक",
+          "items": [
+            {
+              "name": "उकडलेली अंडी",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_018"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "19:45",
+          "label": "रात्रीचे जेवण",
+          "items": [
+            {
+              "name": "चिकन",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_013"
+            },
+            {
+              "name": "चपाती",
+              "quantity": 1,
+              "unit": "मध्यम नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_005"
+            },
+            {
+              "name": "कोबी भाजी",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_034"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        }
+      ],
+      "exercise": {
+        "day": 17,
+        "phase": "सातत्य व सौम्य Strength",
+        "warmUpMin": 7,
+        "walkingMin": 25,
+        "coolDownMin": 5,
+        "strengthExercises": [
+          "Wall Push-up 2 x 10",
+          "Glute Bridge 2 x 10 (वेदना नसल्यास)",
+          "Seated March 2 x 10"
+        ],
+        "avoid": [
+          "उड्या",
+          "धावणे/स्प्रिंट",
+          "वेगाने दिशा बदलणारा रॅकेट खेळ",
+          "खोल बैठका/Squats",
+          "वेदना वाढवणारा व्यायाम"
+        ],
+        "painRule": "व्यायामादरम्यान किंवा नंतर वेदना वाढल्यास थांबा/कमी करा आणि डॉक्टर/फिजिओथेरपिस्टचा सल्ला घ्या."
+      },
+      "dailyTargets": {
+        "caloriesKcal": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "proteinG": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "waterMl": {
+          "min": 2000,
+          "max": 2500,
+          "status": "adjust_for_thirst_weather_sweat_and_clinician_advice"
+        }
+      },
+      "notes": [
+        "तेल/तूप मोजून वापरा; पाककृतीनुसार Calories बदलतात.",
+        "नाश्त्याचे दूध 150 ml रोजच्या कॅलरीत मोजा.",
+        "भात/चपाती/भाकरी यांचे प्रमाण त्या दिवसाच्या मेन्याप्रमाणे ठेवा.",
+        "भूक, अशक्तपणा किंवा चक्कर असल्यास खाणे/व्यायाम जबरदस्तीने चालू ठेवू नका."
+      ]
+    },
+    {
+      "day": 18,
+      "phase": "Phase 3 - Progress",
+      "meals": [
+        {
+          "time": "06:45",
+          "label": "सकाळचे दूध",
+          "items": [
+            {
+              "name": "कमी फॅटचे दूध",
+              "quantity": 150,
+              "unit": "ml",
+              "weightState": "as_served",
+              "category": "food",
+              "preparationNote": "साखर न घालता; 07:15 नाश्त्याच्या एकत्रित कॅलरीत समाविष्ट करा",
+              "foodMasterId": "food_001"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "07:15",
+          "label": "नाश्ता",
+          "items": [
+            {
+              "name": "पूर्ण अंडी",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_002"
+            },
+            {
+              "name": "अंड्याचा पांढरा भाग",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_003"
+            },
+            {
+              "name": "बेसन",
+              "quantity": 60,
+              "unit": "g",
+              "weightState": "raw",
+              "category": "food",
+              "preparationNote": "2 छोटे चिल्ले",
+              "foodMasterId": "food_022"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "11:00",
+          "label": "दुपारचे मुख्य जेवण",
+          "items": [
+            {
+              "name": "चपाती",
+              "quantity": 2,
+              "unit": "मध्यम नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_005"
+            },
+            {
+              "name": "मूग डाळ",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_006"
+            },
+            {
+              "name": "पालक भाजी",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_007"
+            },
+            {
+              "name": "साधे दही",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_008"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "14:00",
+          "label": "दुपारचा स्नॅक",
+          "items": [
+            {
+              "name": "सफरचंद",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_004"
+            },
+            {
+              "name": "साधे दही",
+              "quantity": 100,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_008"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "16:30",
+          "label": "संध्याकाळचा स्नॅक",
+          "items": [
+            {
+              "name": "पनीर",
+              "quantity": 100,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_031"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "19:45",
+          "label": "रात्रीचे जेवण",
+          "items": [
+            {
+              "name": "मासे",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_019"
+            },
+            {
+              "name": "ज्वारीची भाकरी",
+              "quantity": 1,
+              "unit": "लहान नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_020"
+            },
+            {
+              "name": "दुधी भाजी",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_021"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        }
+      ],
+      "exercise": {
+        "day": 18,
+        "phase": "लक्षणे नसल्यास आरामदायी प्रगती",
+        "warmUpMin": 7,
+        "walkingMin": 30,
+        "coolDownMin": 5,
+        "strengthExercises": [
+          "Wall Push-up 2 x 10",
+          "Seated March 2 x 10",
+          "Calf Raise 2 x 8 (वेदना नसल्यास)"
+        ],
+        "avoid": [
+          "उड्या",
+          "धावणे/स्प्रिंट",
+          "वेगाने दिशा बदलणारा रॅकेट खेळ",
+          "खोल बैठका/Squats",
+          "वेदना वाढवणारा व्यायाम"
+        ],
+        "painRule": "व्यायामादरम्यान किंवा नंतर वेदना वाढल्यास थांबा/कमी करा आणि डॉक्टर/फिजिओथेरपिस्टचा सल्ला घ्या."
+      },
+      "dailyTargets": {
+        "caloriesKcal": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "proteinG": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "waterMl": {
+          "min": 2000,
+          "max": 2500,
+          "status": "adjust_for_thirst_weather_sweat_and_clinician_advice"
+        }
+      },
+      "notes": [
+        "तेल/तूप मोजून वापरा; पाककृतीनुसार Calories बदलतात.",
+        "नाश्त्याचे दूध 150 ml रोजच्या कॅलरीत मोजा.",
+        "भात/चपाती/भाकरी यांचे प्रमाण त्या दिवसाच्या मेन्याप्रमाणे ठेवा.",
+        "भूक, अशक्तपणा किंवा चक्कर असल्यास खाणे/व्यायाम जबरदस्तीने चालू ठेवू नका."
+      ]
+    },
+    {
+      "day": 19,
+      "phase": "Phase 3 - Progress",
+      "meals": [
+        {
+          "time": "06:45",
+          "label": "सकाळचे दूध",
+          "items": [
+            {
+              "name": "कमी फॅटचे दूध",
+              "quantity": 150,
+              "unit": "ml",
+              "weightState": "as_served",
+              "category": "food",
+              "preparationNote": "साखर न घालता; 07:15 नाश्त्याच्या एकत्रित कॅलरीत समाविष्ट करा",
+              "foodMasterId": "food_001"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "07:15",
+          "label": "नाश्ता",
+          "items": [
+            {
+              "name": "पूर्ण अंडी",
+              "quantity": 3,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_002"
+            },
+            {
+              "name": "सफरचंद",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_004"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "11:00",
+          "label": "दुपारचे मुख्य जेवण",
+          "items": [
+            {
+              "name": "चपाती",
+              "quantity": 2,
+              "unit": "मध्यम नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_005"
+            },
+            {
+              "name": "राजमा",
+              "quantity": 180,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_036"
+            },
+            {
+              "name": "मेथी भाजी",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_016"
+            },
+            {
+              "name": "साधे दही",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_008"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "14:00",
+          "label": "दुपारचा स्नॅक",
+          "items": [
+            {
+              "name": "पेरू",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_010"
+            },
+            {
+              "name": "भाजलेले चणे",
+              "quantity": 25,
+              "unit": "g",
+              "weightState": "dry",
+              "category": "food",
+              "foodMasterId": "food_011"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "16:30",
+          "label": "संध्याकाळचा स्नॅक",
+          "items": [
+            {
+              "name": "उकडलेली अंडी",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_018"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "19:45",
+          "label": "रात्रीचे जेवण",
+          "items": [
+            {
+              "name": "चिकन",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_013"
+            },
+            {
+              "name": "भात",
+              "quantity": 100,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_026"
+            },
+            {
+              "name": "मिक्स भाजी",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_037"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        }
+      ],
+      "exercise": {
+        "day": 19,
+        "phase": "लक्षणे नसल्यास आरामदायी प्रगती",
+        "warmUpMin": 7,
+        "walkingMin": 30,
+        "coolDownMin": 5,
+        "strengthExercises": [
+          "Wall Push-up 2 x 10",
+          "Seated March 2 x 10",
+          "Calf Raise 2 x 8 (वेदना नसल्यास)"
+        ],
+        "avoid": [
+          "उड्या",
+          "धावणे/स्प्रिंट",
+          "वेगाने दिशा बदलणारा रॅकेट खेळ",
+          "खोल बैठका/Squats",
+          "वेदना वाढवणारा व्यायाम"
+        ],
+        "painRule": "व्यायामादरम्यान किंवा नंतर वेदना वाढल्यास थांबा/कमी करा आणि डॉक्टर/फिजिओथेरपिस्टचा सल्ला घ्या."
+      },
+      "dailyTargets": {
+        "caloriesKcal": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "proteinG": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "waterMl": {
+          "min": 2000,
+          "max": 2500,
+          "status": "adjust_for_thirst_weather_sweat_and_clinician_advice"
+        }
+      },
+      "notes": [
+        "तेल/तूप मोजून वापरा; पाककृतीनुसार Calories बदलतात.",
+        "नाश्त्याचे दूध 150 ml रोजच्या कॅलरीत मोजा.",
+        "भात/चपाती/भाकरी यांचे प्रमाण त्या दिवसाच्या मेन्याप्रमाणे ठेवा.",
+        "भूक, अशक्तपणा किंवा चक्कर असल्यास खाणे/व्यायाम जबरदस्तीने चालू ठेवू नका."
+      ]
+    },
+    {
+      "day": 20,
+      "phase": "Phase 3 - Progress",
+      "meals": [
+        {
+          "time": "06:45",
+          "label": "सकाळचे दूध",
+          "items": [
+            {
+              "name": "कमी फॅटचे दूध",
+              "quantity": 150,
+              "unit": "ml",
+              "weightState": "as_served",
+              "category": "food",
+              "preparationNote": "साखर न घालता; 07:15 नाश्त्याच्या एकत्रित कॅलरीत समाविष्ट करा",
+              "foodMasterId": "food_001"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "07:15",
+          "label": "नाश्ता",
+          "items": [
+            {
+              "name": "मूग डाळ",
+              "quantity": 60,
+              "unit": "g",
+              "weightState": "dry",
+              "category": "food",
+              "preparationNote": "2 चिल्ले",
+              "foodMasterId": "food_006"
+            },
+            {
+              "name": "पूर्ण अंडी",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_002"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "11:00",
+          "label": "दुपारचे मुख्य जेवण",
+          "items": [
+            {
+              "name": "ज्वारीची भाकरी",
+              "quantity": 1,
+              "unit": "मध्यम नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_020"
+            },
+            {
+              "name": "हरभरा उसळ",
+              "quantity": 180,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_029"
+            },
+            {
+              "name": "पालक भाजी",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_007"
+            },
+            {
+              "name": "साधे दही",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_008"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "14:00",
+          "label": "दुपारचा स्नॅक",
+          "items": [
+            {
+              "name": "पपई",
+              "quantity": 200,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_017"
+            },
+            {
+              "name": "भाजलेले चणे",
+              "quantity": 25,
+              "unit": "g",
+              "weightState": "dry",
+              "category": "food",
+              "foodMasterId": "food_011"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "16:30",
+          "label": "संध्याकाळचा स्नॅक",
+          "items": [
+            {
+              "name": "पनीर",
+              "quantity": 100,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_031"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "19:45",
+          "label": "रात्रीचे जेवण",
+          "items": [
+            {
+              "name": "मासे",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_019"
+            },
+            {
+              "name": "चपाती",
+              "quantity": 1,
+              "unit": "मध्यम नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_005"
+            },
+            {
+              "name": "भेंडी भाजी",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_014"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        }
+      ],
+      "exercise": {
+        "day": 20,
+        "phase": "लक्षणे नसल्यास आरामदायी प्रगती",
+        "warmUpMin": 7,
+        "walkingMin": 30,
+        "coolDownMin": 5,
+        "strengthExercises": [
+          "Wall Push-up 2 x 10",
+          "Seated March 2 x 10",
+          "Calf Raise 2 x 8 (वेदना नसल्यास)"
+        ],
+        "avoid": [
+          "उड्या",
+          "धावणे/स्प्रिंट",
+          "वेगाने दिशा बदलणारा रॅकेट खेळ",
+          "खोल बैठका/Squats",
+          "वेदना वाढवणारा व्यायाम"
+        ],
+        "painRule": "व्यायामादरम्यान किंवा नंतर वेदना वाढल्यास थांबा/कमी करा आणि डॉक्टर/फिजिओथेरपिस्टचा सल्ला घ्या."
+      },
+      "dailyTargets": {
+        "caloriesKcal": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "proteinG": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "waterMl": {
+          "min": 2000,
+          "max": 2500,
+          "status": "adjust_for_thirst_weather_sweat_and_clinician_advice"
+        }
+      },
+      "notes": [
+        "तेल/तूप मोजून वापरा; पाककृतीनुसार Calories बदलतात.",
+        "नाश्त्याचे दूध 150 ml रोजच्या कॅलरीत मोजा.",
+        "भात/चपाती/भाकरी यांचे प्रमाण त्या दिवसाच्या मेन्याप्रमाणे ठेवा.",
+        "भूक, अशक्तपणा किंवा चक्कर असल्यास खाणे/व्यायाम जबरदस्तीने चालू ठेवू नका."
+      ]
+    },
+    {
+      "day": 21,
+      "phase": "Phase 3 - Progress",
+      "meals": [
+        {
+          "time": "06:45",
+          "label": "सकाळचे दूध",
+          "items": [
+            {
+              "name": "कमी फॅटचे दूध",
+              "quantity": 150,
+              "unit": "ml",
+              "weightState": "as_served",
+              "category": "food",
+              "preparationNote": "साखर न घालता; 07:15 नाश्त्याच्या एकत्रित कॅलरीत समाविष्ट करा",
+              "foodMasterId": "food_001"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "07:15",
+          "label": "नाश्ता",
+          "items": [
+            {
+              "name": "पूर्ण अंडी",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_002"
+            },
+            {
+              "name": "अंड्याचा पांढरा भाग",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_003"
+            },
+            {
+              "name": "ओट्स",
+              "quantity": 40,
+              "unit": "g",
+              "weightState": "raw",
+              "category": "food",
+              "foodMasterId": "food_028"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "11:00",
+          "label": "दुपारचे मुख्य जेवण",
+          "items": [
+            {
+              "name": "चपाती",
+              "quantity": 2,
+              "unit": "मध्यम नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_005"
+            },
+            {
+              "name": "मूग डाळ",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_006"
+            },
+            {
+              "name": "पालक भाजी",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_007"
+            },
+            {
+              "name": "साधे दही",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_008"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "14:00",
+          "label": "दुपारचा स्नॅक",
+          "items": [
+            {
+              "name": "सफरचंद",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_004"
+            },
+            {
+              "name": "भाजलेले चणे",
+              "quantity": 25,
+              "unit": "g",
+              "weightState": "dry",
+              "category": "food",
+              "foodMasterId": "food_011"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "16:30",
+          "label": "संध्याकाळचा स्नॅक",
+          "items": [
+            {
+              "name": "उकडलेली अंडी",
+              "quantity": 2,
+              "unit": "नग",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_018"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        },
+        {
+          "time": "19:45",
+          "label": "रात्रीचे जेवण",
+          "items": [
+            {
+              "name": "चिकन",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_013"
+            },
+            {
+              "name": "भात",
+              "quantity": 100,
+              "unit": "g",
+              "weightState": "cooked",
+              "category": "food",
+              "foodMasterId": "food_026"
+            },
+            {
+              "name": "कोशिंबीर",
+              "quantity": 150,
+              "unit": "g",
+              "weightState": "as_served",
+              "category": "food",
+              "foodMasterId": "food_024"
+            }
+          ],
+          "nutrition": {
+            "caloriesKcal": null,
+            "proteinG": null,
+            "calculationStatus": "calculate_from_food_master"
+          }
+        }
+      ],
+      "exercise": {
+        "day": 21,
+        "phase": "लक्षणे नसल्यास आरामदायी प्रगती",
+        "warmUpMin": 7,
+        "walkingMin": 30,
+        "coolDownMin": 5,
+        "strengthExercises": [
+          "Wall Push-up 2 x 10",
+          "Seated March 2 x 10",
+          "Calf Raise 2 x 8 (वेदना नसल्यास)"
+        ],
+        "avoid": [
+          "उड्या",
+          "धावणे/स्प्रिंट",
+          "वेगाने दिशा बदलणारा रॅकेट खेळ",
+          "खोल बैठका/Squats",
+          "वेदना वाढवणारा व्यायाम"
+        ],
+        "painRule": "व्यायामादरम्यान किंवा नंतर वेदना वाढल्यास थांबा/कमी करा आणि डॉक्टर/फिजिओथेरपिस्टचा सल्ला घ्या."
+      },
+      "dailyTargets": {
+        "caloriesKcal": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "proteinG": {
+          "min": null,
+          "max": null,
+          "status": "configure_locally_after_profile_review"
+        },
+        "waterMl": {
+          "min": 2000,
+          "max": 2500,
+          "status": "adjust_for_thirst_weather_sweat_and_clinician_advice"
+        }
+      },
+      "notes": [
+        "तेल/तूप मोजून वापरा; पाककृतीनुसार Calories बदलतात.",
+        "नाश्त्याचे दूध 150 ml रोजच्या कॅलरीत मोजा.",
+        "भात/चपाती/भाकरी यांचे प्रमाण त्या दिवसाच्या मेन्याप्रमाणे ठेवा.",
+        "भूक, अशक्तपणा किंवा चक्कर असल्यास खाणे/व्यायाम जबरदस्तीने चालू ठेवू नका."
+      ]
+    }
+  ]
+}

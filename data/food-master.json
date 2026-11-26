@@ -1,0 +1,623 @@
+{
+  "schemaVersion": "1.0.0",
+  "language": "mr-IN",
+  "unitBasis": "per_100g_or_100ml",
+  "foods": [
+    {
+      "foodId": "food_001",
+      "name": "कमी फॅटचे दूध",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_002",
+      "name": "पूर्ण अंडी",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_003",
+      "name": "अंड्याचा पांढरा भाग",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_004",
+      "name": "सफरचंद",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_005",
+      "name": "चपाती",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_006",
+      "name": "मूग डाळ",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_007",
+      "name": "पालक भाजी",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_008",
+      "name": "साधे दही",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_009",
+      "name": "काकडी-टोमॅटो कोशिंबीर",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_010",
+      "name": "पेरू",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_011",
+      "name": "भाजलेले चणे",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_012",
+      "name": "मटकी उसळ",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_013",
+      "name": "चिकन",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_014",
+      "name": "भेंडी भाजी",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_015",
+      "name": "पोहे",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_016",
+      "name": "मेथी भाजी",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_017",
+      "name": "पपई",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_018",
+      "name": "उकडलेली अंडी",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_019",
+      "name": "मासे",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_020",
+      "name": "ज्वारीची भाकरी",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_021",
+      "name": "दुधी भाजी",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_022",
+      "name": "बेसन",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_023",
+      "name": "पालक पनीर",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_024",
+      "name": "कोशिंबीर",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_025",
+      "name": "अंकुरलेले मूग उसळ",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_026",
+      "name": "भात",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_027",
+      "name": "फ्लॉवर भाजी",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_028",
+      "name": "ओट्स",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_029",
+      "name": "हरभरा उसळ",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_030",
+      "name": "संत्रे",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_031",
+      "name": "पनीर",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_032",
+      "name": "मसूर डाळ",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_033",
+      "name": "शेपू भाजी",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_034",
+      "name": "कोबी भाजी",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_035",
+      "name": "रवा",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_036",
+      "name": "राजमा",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_037",
+      "name": "मिक्स भाजी",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_038",
+      "name": "वरण",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_039",
+      "name": "चणा उसळ",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_040",
+      "name": "मूग उसळ",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    },
+    {
+      "foodId": "food_041",
+      "name": "भाजी",
+      "nutritionPer100g": {
+        "caloriesKcal": null,
+        "proteinG": null,
+        "carbsG": null,
+        "fatG": null,
+        "fibreG": null
+      },
+      "source": null,
+      "verifiedAt": null,
+      "status": "needs_verification",
+      "recipeRequired": true
+    }
+  ],
+  "notice": "Food and recipe nutrition values are intentionally left unverified. Calories/Protein remain unavailable until a verified reference value or measured recipe (including oil) is entered."
+}
