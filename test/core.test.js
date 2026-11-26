@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { validateProfile, validatePlan } from '../src/utils/validation.js';
-import { buildPushSchedule } from '../src/modules/reminder-engine.js';
+import { buildPushSchedule, isWithinReminderWindow } from '../src/modules/reminder-engine.js';
 import { addDaysISO, diffDays, istDateTimeToISO, getProgramDay } from '../src/utils/date-time.js';
 import { calculateNutrition } from '../src/modules/nutrition-calculator.js';
 import { validatePushSubscription, validateSchedulePayload, makeReminderPayload } from '../push-service/schedule-utils.js';
@@ -45,6 +45,14 @@ test('21-day schedule builder creates 462 IST-local reminders in chronological o
   assert.equal(reminders[0].sendAt, '2026-11-26T23:30:00.000Z');
   assert.equal(reminders.at(-1).date, '2026-12-17');
   assert.ok(reminders.every((item, index) => index === 0 || reminders[index - 1].sendAt <= item.sendAt));
+});
+
+test('in-app reminders tolerate timer drift and short tab wake-up delays without replaying stale reminders', () => {
+  const dueAt = '2026-11-26T23:30:00.000Z';
+  assert.equal(isWithinReminderWindow(dueAt, new Date('2026-11-26T23:30:01.000Z')), true);
+  assert.equal(isWithinReminderWindow(dueAt, new Date('2026-11-26T23:38:00.000Z')), true);
+  assert.equal(isWithinReminderWindow(dueAt, new Date('2026-11-26T23:41:00.000Z')), false);
+  assert.equal(isWithinReminderWindow(dueAt, new Date('2026-11-26T23:29:59.000Z')), false);
 });
 
 test('date utilities handle program day boundaries and leap-year-safe day arithmetic', () => {
