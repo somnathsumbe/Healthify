@@ -75,7 +75,6 @@ export async function exportLocalBackup() {
   const result = { schemaVersion: 1, exportedAt: new Date().toISOString(), data: {} };
   for (const store of STORES) {
     result.data[store] = await getAllRecords(store);
-    if (store === 'settings') result.data.settings = result.data.settings.map(item => item.id === 'push-config' ? { ...item, token: null } : item);
   }
   return result;
 }

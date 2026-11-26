@@ -23,6 +23,7 @@ test('PWA manifest includes valid app identity, scope and install icons', () => 
   assert.equal(manifest.start_url, './');
   assert.equal(manifest.scope, './');
   assert.equal(manifest.display, 'standalone');
+  assert.equal(Object.hasOwn(manifest, 'orientation'), false);
   assert.ok(manifest.icons.some(icon => icon.sizes === '192x192'));
   assert.ok(manifest.icons.some(icon => icon.sizes === '512x512'));
   for (const icon of manifest.icons) assert.ok(fs.existsSync(path.join(root, icon.src.replace(/^\.\//,''))));
@@ -45,4 +46,22 @@ test('repository sources do not include the provided personal profile measuremen
     assert.equal(content.includes('91.44'), false, `${relative} contains the private waist in cm`);
     assert.equal(content.includes('Somnath'), false, `${relative} contains the user's name`);
   }
+});
+
+test('responsive shell provides PWA-only desktop, tablet and mobile navigation', () => {
+  const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+  const css = fs.readFileSync(path.join(root, 'assets/css/style.css'), 'utf8');
+  const sourceFiles = ['index.html','src/app.js','package.json','manifest.webmanifest']
+    .map(relative => fs.readFileSync(path.join(root, relative), 'utf8'))
+    .join('\n');
+  assert.doesNotMatch(sourceFiles, /boot?strap@|electron|tauri|capacitor|cordova|react-native/i);
+  assert.match(html, /manifest\.webmanifest/);
+  assert.match(css, /@media\(min-width:1024px\)/);
+  assert.match(css, /@media\(min-width:768px\)/i); // tablet responsive sizing may be in base breakpoints
+});
+
+test('settings no longer offer closed-app Push setup', () => {
+  const app = fs.readFileSync(path.join(root, 'src/app.js'), 'utf8');
+  assert.doesNotMatch(app, /Push Notification Setup|pushForm|syncScheduleWithPushService/);
+  assert.match(app, /deleteRecord\('settings','push-config'\)/);
 });

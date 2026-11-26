@@ -5,8 +5,7 @@ import { getRecord, putRecord, getAllRecords, exportLocalBackup, importLocalBack
 import { validateProfile } from './utils/validation.js';
 import { addWater, getTodayWaterTotal, getTodayWaterEntries, removeWaterEntry } from './modules/water-tracker.js';
 import { saveDailyProgress, getProgressHistory, calculateSevenDayAverage, getTodayProgress } from './modules/progress.js';
-import { setReminderStatus, startReminderEngine, syncScheduleWithPushService } from './modules/reminder-engine.js';
-import { getVapidPublicKey, subscribeToPush, removePushSubscription } from './services/push-client.js';
+import { setReminderStatus, startReminderEngine } from './modules/reminder-engine.js';
 
 const $ = (selector, root = document) => root.querySelector(selector);
 const app = $('#app');
@@ -17,7 +16,6 @@ let activeView = 'today';
 let dayOverride = null;
 let stopReminderEngine = null;
 let installPrompt = null;
-let pushSettings = null;
 
 const icons = { water:'💧', meal:'🍱', wake:'🌞', mobility:'🤸', cardio:'🚶', cooldown:'🌿', movement_break:'🕺', sleep_prep:'🌙', sleep:'😴' };
 
@@ -46,7 +44,6 @@ function showReminderActions(reminder) {
       try {
         const extra = status === 'snoozed' ? { snoozeUntil: new Date(Date.now() + 10 * 60_000).toISOString(), notifiedAt: null } : {};
         await setReminderStatus(reminder.id, status, extra);
-        await syncStatusToPush(reminder.id, status, extra);
         node.remove();
         toast(status === 'completed' ? 'छान! Reminder पूर्ण झाला. 🎉' : status === 'skipped' ? 'Reminder Skip केला.' : '10 मिनिटांनी पुन्हा आठवण करून देऊ. ⏰');
       } catch (error) { toast(error.message, 'error'); }
@@ -56,18 +53,6 @@ function showReminderActions(reminder) {
   actions.append(makeAction('पूर्ण ✓', 'completed'), makeAction('10 मिनिटे', 'snoozed'), makeAction('Skip', 'skipped'));
   node.append(copy, actions); host.append(node);
   while (host.children.length > 3) host.firstElementChild.remove();
-}
-
-async function syncStatusToPush(reminderId, status, extra = {}) {
-  const config = await getRecord('settings', 'push-config');
-  if (!config?.enabled || !config.endpoint || !config.token || !config.subscriptionId) return;
-  try {
-    await fetch(`${config.endpoint.replace(/\/$/, '')}/api/push/reminder-status`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${config.token}` },
-      body: JSON.stringify({ subscriptionId: config.subscriptionId, reminderId, status, snoozeUntil: extra.snoozeUntil || null })
-    });
-  } catch (error) { console.warn('Push status sync deferred:', error); }
 }
 
 function escapeHTML(value = '') {
@@ -85,23 +70,43 @@ function getSelectedDay() {
 
 function renderShell() {
   app.innerHTML = `
-    <header class="app-header">
+    <aside class="desktop-sidebar" aria-label="मुख्य मेनू">
       <div class="brand-lockup"><img src="./assets/icons/healthify-mascot.svg" alt="" class="brand-mascot"><div><div class="brand-name">healthify<span>.</span></div><div class="brand-subtitle">तुमचा healthy buddy</div></div></div>
-      <button class="icon-button" id="openSettings" aria-label="Settings">⚙️</button>
-    </header>
-    <main id="viewRoot" class="view-root" tabindex="-1"></main>
+      <nav class="desktop-nav">
+        <button data-view="today" class="desktop-nav-item active"><span>01</span>Dashboard</button>
+        <button data-view="plan" class="desktop-nav-item"><span>02</span>My 21-Day Plan</button>
+        <button data-view="water" class="desktop-nav-item"><span>03</span>Water Tracker</button>
+        <button data-view="workout" class="desktop-nav-item"><span>04</span>Exercise & Activity</button>
+        <button data-view="progress" class="desktop-nav-item"><span>05</span>My Progress</button>
+        <button data-view="settings" class="desktop-nav-item"><span>06</span>Settings</button>
+      </nav>
+      <button class="sidebar-profile" data-view="settings"><img src="./assets/icons/mascot-happy.svg" alt=""><span><strong id="sidebarProfileName">Healthify</strong><small>Local profile</small></span></button>
+    </aside>
+    <section class="desktop-main">
+      <header class="app-header">
+        <div class="mobile-brand brand-lockup"><img src="./assets/icons/healthify-mascot.svg" alt="" class="brand-mascot"><div><div class="brand-name">healthify<span>.</span></div></div></div>
+        <div class="desktop-greeting"><span id="desktopGreeting">Good morning</span><strong id="desktopDate"></strong></div>
+        <div class="header-actions"><button class="theme-button" id="themeToggle" type="button" aria-label="Dark theme switch">Dark</button><button class="icon-button" id="openSettings" aria-label="Settings">Settings</button></div>
+      </header>
+      <main id="viewRoot" class="view-root" tabindex="-1"></main>
+    </section>
+    <aside class="context-panel" aria-label="आजची माहिती">
+      <div class="context-heading"><span class="eyebrow">TODAY</span><strong id="contextDay">Day 1</strong></div>
+      <div class="context-card"><span class="eyebrow">NEXT REMINDER</span><strong id="contextReminder">Loading...</strong><small id="contextReminderText"></small></div>
+      <div class="context-card"><span class="eyebrow">QUICK ACTIONS</span><button data-view="water" class="context-action">Add water</button><button data-view="workout" class="context-action">Start activity</button></div>
+    </aside>
     <nav class="bottom-nav" aria-label="मुख्य मेनू">
-      <button data-view="today" class="nav-item active"><span>🏡</span><small>आज</small></button>
-      <button data-view="plan" class="nav-item"><span>🗓️</span><small>21 दिवस</small></button>
-      <button data-view="water" class="nav-item"><span>💧</span><small>पाणी</small></button>
-      <button data-view="workout" class="nav-item"><span>🏃</span><small>Workout</small></button>
-      <button data-view="progress" class="nav-item"><span>📈</span><small>Progress</small></button>
+      <button data-view="today" class="nav-item active"><span aria-hidden="true">Home</span><small>आज</small></button>
+      <button data-view="plan" class="nav-item"><span aria-hidden="true">Plan</span><small>21 दिवस</small></button>
+      <button data-view="water" class="nav-item"><span aria-hidden="true">Water</span><small>पाणी</small></button>
+      <button data-view="progress" class="nav-item"><span aria-hidden="true">Progress</span><small>प्रगती</small></button>
+      <button data-view="settings" class="nav-item"><span aria-hidden="true">Profile</span><small>Profile</small></button>
     </nav>
     <div id="toastHost" class="toast-host" aria-live="polite"></div>
     <dialog class="profile-dialog" id="profileModal" aria-labelledby="profileModalTitle">
       <div class="modal-content custom-modal">
         <div class="modal-header border-0"><div><span class="eyebrow">तुमची वैयक्तिक जागा</span><h2 class="modal-title" id="profileModalTitle">तुमचा profile तयार करूया ✨</h2></div><button type="button" class="dialog-close" id="closeProfile" aria-label="Close">×</button></div>
-        <div class="modal-body"><p class="muted-copy">ही माहिती फक्त या डिव्हाइसवर जतन होते. GitHub किंवा Push Service कडे पाठवली जात नाही.</p>
+        <div class="modal-body"><p class="muted-copy">ही माहिती फक्त या डिव्हाइसवर जतन होते. कोणत्याही server कडे पाठवली जात नाही.</p>
           <form id="profileForm" class="form-grid">
             <label class="field field-wide">तुमचे नाव<input name="name" required maxlength="80" autocomplete="name" placeholder="तुमचे नाव"></label>
             <label class="field">वय<input name="ageYears" type="number" min="18" max="100" required inputmode="numeric" placeholder="वर्षे"></label>
@@ -121,13 +126,45 @@ function renderShell() {
   app.querySelectorAll('[data-view]').forEach(button => button.addEventListener('click', () => navigate(button.dataset.view)));
   $('#openSettings').addEventListener('click', () => navigate('settings'));
   $('#closeProfile').addEventListener('click', () => { if (profile) $('#profileModal').close(); else toast('सुरू करण्यासाठी Profile पूर्ण करा.', 'error'); });
+  $('#themeToggle').addEventListener('click', toggleTheme);
+  applySavedTheme();
+  updateHeader();
 }
 
 function navigate(view) {
   activeView = view;
   dayOverride = null;
   app.querySelectorAll('.nav-item').forEach(button => button.classList.toggle('active', button.dataset.view === view));
+  app.querySelectorAll('.desktop-nav-item').forEach(button => button.classList.toggle('active', button.dataset.view === view));
   renderView().catch(error => toast(error.message, 'error'));
+}
+
+function applySavedTheme() {
+  const saved = localStorage.getItem('healthify-theme');
+  const theme = saved === 'dark' ? 'dark' : 'light';
+  document.documentElement.dataset.theme = theme;
+  const button = $('#themeToggle');
+  if (button) {
+    button.textContent = theme === 'dark' ? 'Light' : 'Dark';
+    button.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+  }
+}
+
+function toggleTheme() {
+  const theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+  document.documentElement.dataset.theme = theme;
+  localStorage.setItem('healthify-theme', theme);
+  applySavedTheme();
+}
+
+function updateHeader() {
+  if (!profile) return;
+  const hour = new Date().getHours();
+  $('#desktopGreeting').textContent = hour < 12 ? 'Good morning' : hour < 18 ? 'Good afternoon' : 'Good evening';
+  $('#desktopDate').textContent = formatDateMarathi(getTodayISO());
+  $('#sidebarProfileName').textContent = profile.name;
+  const context = getProgramContext();
+  $('#contextDay').textContent = context.beforeStart ? 'Starting soon' : `Day ${context.day} / 21`;
 }
 
 function profileBMI() {
@@ -142,7 +179,7 @@ async function renderToday() {
   const phaseLabel = day.phase.replace('Phase 1 - ', '').replace('Phase 2 - ', '').replace('Phase 3 - ', '');
   return `
     <section class="hero-card">
-      <div class="hero-copy"><span class="eyebrow">${context.beforeStart ? 'उद्या सुरुवात 🚀' : `DAY ${context.day} / 21`}</span><h1>हाय ${escapeHTML(profile.name.split(' ')[0])}!<br>आजचा दिवस तुझाच 💪</h1><p>${context.beforeStart ? `${formatDateMarathi(profile.startDate)} पासून आपली journey सुरू होईल.` : 'छोट्या सवयी, मोठा बदल. आजचा प्लॅन पूर्ण करूया!'}</p><div class="hero-pills"><span>🌱 ${phaseLabel}</span><span>🔥 ${done}/6 meals</span></div></div>
+      <div class="hero-copy"><span class="eyebrow">${context.beforeStart ? 'उद्या सुरुवात' : `DAY ${context.day} / 21`}</span><h1>हाय ${escapeHTML(profile.name.split(' ')[0])}!<br>आजचा दिवस तुझाच</h1><p>${context.beforeStart ? `${formatDateMarathi(profile.startDate)} पासून आपली journey सुरू होईल.` : 'छोट्या सवयी, मोठा बदल. आजचा प्लॅन पूर्ण करूया!'}</p><div class="hero-pills"><span>${phaseLabel}</span><span>${done}/6 meals complete</span></div><button class="hero-action" data-action="start-day">${context.beforeStart ? 'Program पूर्वतयारी' : 'Start My Day'}</button></div>
       <img class="hero-mascot" src="./assets/icons/mascot-happy.svg" alt="हसरा fitness cartoon buddy">
       <div class="hero-spark spark-one">✦</div><div class="hero-spark spark-two">✦</div>
     </section>
@@ -194,6 +231,7 @@ async function renderWater() {
     <section class="water-hero"><img src="./assets/icons/mascot-water.svg" alt="हसरा पाण्याचा थेंब"><div><span>आजपर्यंत प्यायलेले</span><strong id="waterTotal">${total.toLocaleString('en-IN')} <small>ml</small></strong><small>लक्ष्य मार्गदर्शक: 2,000–2,500 ml</small></div></section>
     <div class="water-progress"><div class="progress-track"><span style="width:${Math.min(100,total/2500*100)}%"></span></div><small>${Math.round(total/2500*100)}% of 2,500 ml guide</small></div>
     <section class="section-heading"><div><span class="eyebrow">QUICK ADD</span><h2>किती पाणी प्यायलात?</h2></div></section><div class="water-add-grid"><button data-water="150">+150 ml</button><button data-water="250">+250 ml</button><button data-water="300">+300 ml</button><button data-water="500">+500 ml</button></div>
+    <form id="customWaterForm" class="custom-water form-grid"><label class="field field-wide">Custom quantity (ml)<input name="quantityMl" type="number" min="50" max="3000" step="50" required inputmode="numeric" placeholder="उदा. 350"></label><div class="field-wide"><button class="primary-button w-100" type="submit">पाणी नोंदवा</button></div></form>
     <section class="timeline-card"><div class="timeline-head"><strong>आजच्या नोंदी</strong><span>${entries.length} entries</span></div>${entries.length?entries.map(item=>`<div class="water-entry"><span>💧 ${item.quantityMl} ml</span><small>${new Date(item.createdAt).toLocaleTimeString('mr-IN',{hour:'2-digit',minute:'2-digit'})}</small><button data-remove-water="${item.id}" aria-label="नोंद काढा">×</button></div>`).join(''):'<p class="empty-state">अजून पाणी नोंदवलेले नाही. पहिली नोंद करा!</p>'}</section>`;
 }
 
@@ -219,11 +257,8 @@ async function renderProgress() {
 }
 
 async function renderSettings() {
-  const saved = await getRecord('settings','push-config');
-  pushSettings = saved || {};
   return `<section class="page-intro"><span class="eyebrow">YOUR SPACE</span><h1>Settings ⚙️</h1><p>तुमचा App, तुमचे नियम.</p></section>
     <section class="timeline-card"><div class="section-heading"><div><span class="eyebrow">PROFILE</span><h2>वैयक्तिक माहिती</h2></div><button class="text-button" id="editProfile">Edit</button></div><p><strong>${escapeHTML(profile.name)}</strong></p><p class="muted-copy">${profile.ageYears} वर्षे · ${profile.heightCm} cm · ${profile.currentWeightKg} kg · Waist ${profile.waistInches} in</p><p class="local-note">🔒 Profile आणि Progress फक्त IndexedDB मध्ये जतन होतात.</p></section>
-    <section class="timeline-card"><span class="eyebrow">CLOSED-APP REMINDERS</span><h2>Push Notification Setup</h2><p class="muted-copy">Backend deploy झाल्यावरच हा भाग वापरा. Subscription आणि वेळापत्रक Push Service मध्ये साठेल; आरोग्य डेटा पाठवला जाणार नाही.</p><form id="pushForm" class="form-grid"><label class="field field-wide">Push Service URL<input name="endpoint" type="url" placeholder="https://your-push-service.example.com" value="${escapeHTML(saved?.endpoint||'')}"></label><label class="field field-wide">Owner Access Token<input name="token" type="password" autocomplete="off" placeholder="Server मधील PUSH_API_TOKEN"></label><div class="field-wide"><button class="primary-button w-100" type="submit">Push Reminders Enable करा</button></div></form><p class="muted-copy">VAPID Private Key कधीही येथे टाकू नका. ती फक्त Server Environment Variables मध्ये राहील.</p></section>
     <section class="timeline-card"><span class="eyebrow">BACKUP & PRIVACY</span><h2>तुमचा डेटा</h2><div class="settings-actions"><button class="outline-button" id="exportBackup">⬇ Backup Download</button><label class="outline-button file-button">⬆ Backup Restore<input type="file" id="importBackup" accept="application/json" hidden></label><button class="danger-button" id="resetData">सर्व Local Data Delete करा</button></div></section>`;
 }
 
@@ -237,13 +272,27 @@ async function renderView() {
   else if (activeView === 'settings') root.innerHTML = await renderSettings();
   bindViewEvents(root);
   if (activeView === 'today') $('#waterTotalToday').innerHTML = `${(await getTodayWaterTotal()).toLocaleString('en-IN')} <small>ml</small>`;
+  updateHeader();
+  updateContextPanel();
+}
+
+async function updateContextPanel() {
+  if (!plan || !profile) return;
+  const context = getProgramContext();
+  const now = new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Kolkata',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(new Date());
+  const reminder = context.beforeStart
+    ? plan.dailyReminderTemplate[0]
+    : plan.dailyReminderTemplate.find(item => item.time > now);
+  $('#contextReminder').textContent = reminder ? `${reminder.time} · ${reminder.title}` : 'आजचे सर्व Reminder झाले!';
+  $('#contextReminderText').textContent = reminder?.message || 'छान काम केलं!';
 }
 
 function bindViewEvents(root) {
   root.querySelector('[data-action="open-plan"]')?.addEventListener('click',()=>navigate('plan'));
+  root.querySelector('[data-action="start-day"]')?.addEventListener('click',()=>navigate(getProgramContext().beforeStart ? 'plan' : 'water'));
   root.querySelectorAll('[data-meal-time]').forEach(button=>button.addEventListener('click',async()=>{
     const time=button.dataset.mealTime; const date=activeView==='plan' ? addDaysISO(profile.startDate, (dayOverride || getProgramContext().day)-1) : getTodayISO(); const id=`${date}-${time.replace(':','')}-meal`;
-    await setReminderStatus(id,'completed',{completedAt:new Date().toISOString()}); await syncStatusToPush(id,'completed'); toast(`${time} चे Meal पूर्ण झाले! 🎉`); await renderView();
+    await setReminderStatus(id,'completed',{completedAt:new Date().toISOString()}); toast(`${time} चे Meal पूर्ण झाले! 🎉`); await renderView();
   }));
   root.querySelectorAll('[data-day]').forEach(button=>button.addEventListener('click',()=>{dayOverride=Number(button.dataset.day);renderView();}));
   root.querySelectorAll('[data-phase]').forEach(button=>button.addEventListener('click',()=>{
@@ -251,13 +300,18 @@ function bindViewEvents(root) {
     dayOverride=(phase-1)*7+1; renderView();
   }));
   root.querySelectorAll('[data-water]').forEach(button=>button.addEventListener('click',async()=>{try{await addWater(button.dataset.water);toast(`${button.dataset.water} ml पाणी नोंदवले! 💧`);await renderView();}catch(error){toast(error.message,'error');}}));
+  root.querySelector('#customWaterForm')?.addEventListener('submit',async event=>{
+    event.preventDefault();
+    const quantity=Number(new FormData(event.currentTarget).get('quantityMl'));
+    if(!Number.isFinite(quantity)||quantity<50||quantity>3000){toast('50 ते 3000 ml मधील प्रमाण भरा.','error');return;}
+    try{await addWater(quantity);toast(`${quantity} ml पाणी नोंदवले!`);await renderView();}catch(error){toast(error.message,'error');}
+  });
   root.querySelectorAll('[data-remove-water]').forEach(button=>button.addEventListener('click',async()=>{await removeWaterEntry(button.dataset.removeWater);await renderView();}));
   root.querySelector('#kneeSlider')?.addEventListener('input',event=>$('#kneeValue').textContent=`${event.target.value} / 10`);
   root.querySelector('#saveKnee')?.addEventListener('click',async()=>{const current=await getTodayProgress()||{};await saveDailyProgress({...current,kneePain:$('#kneeSlider').value});toast('Knee Pain Score सेव्ह केला.');});
   root.querySelector('#completeWorkout')?.addEventListener('click',async()=>{const current=await getTodayProgress()||{};await saveDailyProgress({...current,exerciseCompleted:true});toast('Workout पूर्ण! छान काम केलं. 💪');});
   root.querySelector('#progressForm')?.addEventListener('submit',async event=>{event.preventDefault();const form=Object.fromEntries(new FormData(event.currentTarget));try{await saveDailyProgress(form);toast('आजची प्रगती सेव्ह झाली!');await renderView();}catch(error){toast(error.message,'error');}});
   root.querySelector('#editProfile')?.addEventListener('click',openProfileModal);
-  root.querySelector('#pushForm')?.addEventListener('submit',enablePush);
   root.querySelector('#exportBackup')?.addEventListener('click',downloadBackup);
   root.querySelector('#importBackup')?.addEventListener('change',restoreBackup);
   root.querySelector('#resetData')?.addEventListener('click',resetData);
@@ -293,21 +347,6 @@ function startReminders() {
   });
 }
 
-async function enablePush(event) {
-  event.preventDefault();
-  const values=Object.fromEntries(new FormData(event.currentTarget));
-  const endpoint=values.endpoint.trim(); const token=values.token.trim();
-  if(!endpoint || !token){toast('Push Service URL आणि Token भरा.','error');return;}
-  try{
-    const publicKey=await getVapidPublicKey(endpoint);
-    const result=await subscribeToPush({endpoint,token,applicationServerKey:publicKey});
-    await putRecord('settings',{id:'push-config',endpoint,token,subscriptionId:result.subscriptionId,enabled:false});
-    const sync=await syncScheduleWithPushService({endpoint,token,subscriptionId:result.subscriptionId,profile,template:plan.dailyReminderTemplate});
-    await putRecord('settings',{id:'push-config',endpoint,token,subscriptionId:result.subscriptionId,enabled:true});
-    toast(`Push Reminders सुरू! ${sync.scheduledCount} reminders schedule केले.`);
-  }catch(error){toast(error.message,'error');}
-}
-
 async function downloadBackup() {
   const backup=await exportLocalBackup();
   const blob=new Blob([JSON.stringify(backup,null,2)],{type:'application/json'});
@@ -322,11 +361,6 @@ async function restoreBackup(event) {
 
 async function resetData() {
   if(!confirm('सर्व Profile, Weight, Water आणि Reminder Logs कायमचे Delete करायचे आहेत का? आधी Backup घ्या.'))return;
-  const config = await getRecord('settings', 'push-config');
-  if (config?.enabled && config.endpoint && config.token && config.subscriptionId) {
-    try { await removePushSubscription({ endpoint: config.endpoint, token: config.token, subscriptionId: config.subscriptionId }); }
-    catch (error) { toast('Push Subscription रद्द झाली नाही: ' + error.message, 'error'); return; }
-  }
   await clearAllHealthData();profile=null;if(stopReminderEngine)stopReminderEngine();$('#profileModal').showModal();toast('Local Data Delete केला.','info');
 }
 
@@ -341,20 +375,12 @@ async function init() {
     [plan, foodMaster]=await Promise.all([loadPlan(), loadFoodMaster()]);
     renderShell();
     const db=await import('./services/storage.js'); await db.openDatabase();
+    await db.deleteRecord('settings','push-config');
     profile=await getRecord('settings','profile');
     registerPWA();
     $('#profileForm').addEventListener('submit',saveProfile);
     if(!profile){activeView='today';await openProfileModal();}
     else {startReminders();await renderView();}
-    const pushedReminderId = new URLSearchParams(location.search).get('reminderId');
-    if (pushedReminderId) {
-      const match = pushedReminderId.match(/^(\d{4}-\d{2}-\d{2})-(\d{2})(\d{2})-(.+)$/);
-      if (match) {
-        const reminder = plan.dailyReminderTemplate.find(item => item.time === `${match[2]}:${match[3]}` && item.type === match[4]);
-        if (reminder) showReminderActions({ ...reminder, id: pushedReminderId, date: match[1] });
-      }
-      history.replaceState({}, '', location.pathname);
-    }
     window.addEventListener('online',()=>toast('Internet पुन्हा जोडले गेले.','info'));
   }catch(error){
     app.innerHTML=`<div class="fatal-error"><img src="./assets/icons/healthify-mascot.svg" alt=""><h1>अरेरे! काहीतरी चुकले.</h1><p>${escapeHTML(error.message)}</p><button class="primary-button" onclick="location.reload()">पुन्हा प्रयत्न करा</button></div>`;

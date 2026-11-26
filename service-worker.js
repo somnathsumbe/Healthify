@@ -1,4 +1,4 @@
-const CACHE_NAME = 'healthify-shell-v1';
+const CACHE_NAME = 'healthify-shell-v2';
 const APP_SHELL = [
   './', './index.html', './manifest.webmanifest', './assets/css/style.css',
   './assets/icons/healthify-icon.svg', './assets/icons/healthify-icon-180.png', './assets/icons/healthify-icon-192.png', './assets/icons/healthify-icon-512.png', './assets/icons/healthify-mascot.svg',
@@ -8,7 +8,7 @@ const APP_SHELL = [
   './src/modules/plan-loader.js', './src/modules/reminder-engine.js',
   './src/modules/water-tracker.js', './src/modules/progress.js',
   './src/modules/nutrition-calculator.js', './src/services/storage.js',
-  './src/services/push-client.js', './src/utils/date-time.js', './src/utils/validation.js'
+  './src/utils/date-time.js', './src/utils/validation.js'
 ];
 
 self.addEventListener('install', event => {
@@ -38,31 +38,4 @@ self.addEventListener('fetch', event => {
     }
     return response;
   }).catch(() => request.mode === 'navigate' ? caches.match('./index.html') : Promise.reject(new Error('Offline resource unavailable')))));
-});
-
-self.addEventListener('push', event => {
-  let payload = { title: 'Healthify Reminder', body: 'तुमच्या दिनक्रमाची वेळ झाली आहे.', url: './' };
-  try { if (event.data) payload = { ...payload, ...event.data.json() }; } catch { if (event.data) payload.body = event.data.text(); }
-  event.waitUntil(self.registration.showNotification(payload.title, {
-    body: payload.body,
-    icon: './assets/icons/healthify-icon-192.png',
-    badge: './assets/icons/healthify-icon-192.png',
-    tag: payload.tag || 'healthify-reminder',
-    renotify: false,
-    data: { url: payload.url || './', reminderId: payload.tag || null },
-    actions: [{ action: 'open', title: 'प्लॅन उघडा' }]
-  }));
-});
-
-self.addEventListener('notificationclick', event => {
-  event.notification.close();
-  const targetUrl = new URL(event.notification.data?.url || './', self.registration.scope);
-  if (event.notification.data?.reminderId) targetUrl.searchParams.set('reminderId', event.notification.data.reminderId);
-  const target = targetUrl.href;
-  event.waitUntil(self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then(clients => {
-    for (const client of clients) {
-      if ('focus' in client) return client.navigate(target).then(() => client.focus());
-    }
-    return self.clients.openWindow(target);
-  }));
 });
