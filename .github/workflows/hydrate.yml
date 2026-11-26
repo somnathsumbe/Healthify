@@ -10,26 +10,44 @@ permissions:
 
 jobs:
   hydrate:
-    if: ${{ hashFiles('.healthify-bootstrap/part-*.b64') != '' }}
     runs-on: ubuntu-latest
+    outputs:
+      bundle_available: ${{ steps.bundle.outputs.available }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
         with:
           persist-credentials: true
 
+      - name: Detect staged source bundle
+        id: bundle
+        shell: bash
+        run: |
+          if compgen -G ".healthify-bootstrap/part-*.b64" > /dev/null; then
+            echo "available=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "available=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Extract verified source bundle
+        if: steps.bundle.outputs.available == 'true'
         shell: bash
         run: |
           set -euo pipefail
           cat .healthify-bootstrap/part-*.b64 > /tmp/healthify-source.b64
           base64 --decode /tmp/healthify-source.b64 > /tmp/healthify-source.tar.gz
+          echo "ce9c8c769e68eec7133e1c2df822c221aa2f8657c52dd386a0c3fcec76d06a39  /tmp/healthify-source.tar.gz" | sha256sum --check
           tar -tzf /tmp/healthify-source.tar.gz >/dev/null
+          if tar -tzf /tmp/healthify-source.tar.gz | grep -E '(^/|(^|/)\.\.(/|$))'; then
+            echo "Unsafe path found in source archive."
+            exit 1
+          fi
           tar -xzf /tmp/healthify-source.tar.gz
           rm -rf .healthify-bootstrap
           rm -f /tmp/healthify-source.b64 /tmp/healthify-source.tar.gz
 
       - name: Commit complete project source
+        if: steps.bundle.outputs.available == 'true'
         shell: bash
         run: |
           set -euo pipefail
