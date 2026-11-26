@@ -1,0 +1,39 @@
+name: Hydrate Healthify source bundle
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  hydrate:
+    if: ${{ hashFiles('.healthify-bootstrap.tar.gz') != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Extract verified source bundle
+        shell: bash
+        run: |
+          set -euo pipefail
+          tar -tzf .healthify-bootstrap.tar.gz >/dev/null
+          tar -xzf .healthify-bootstrap.tar.gz
+          rm -f .healthify-bootstrap.tar.gz
+
+      - name: Commit complete project source
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "Build Healthify 21-day fitness PWA"
+            git push origin HEAD:main
+          fi
