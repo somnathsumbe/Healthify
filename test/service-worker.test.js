@@ -45,23 +45,3 @@ test('service worker installs the full application shell', async () => {
   assert.ok(calls.cacheAdds[0].includes('./data/21-day-fat-loss-plan.json'));
   assert.ok(calls.skipWaiting);
 });
-
-test('push event renders a notification with mascot icon, tag and click data', async () => {
-  const { listeners, calls } = createWorkerHarness();
-  let pushPromise;
-  listeners.get('push')({ data: { json: () => ({ title:'पाणी पिण्याची वेळ', body:'250 ml पाणी प्या', tag:'2026-11-27-0900-water', url:'./' }) }, waitUntil: promise => { pushPromise = promise; } });
-  await pushPromise;
-  assert.equal(calls.notifications.length, 1);
-  assert.equal(calls.notifications[0].title, 'पाणी पिण्याची वेळ');
-  assert.equal(calls.notifications[0].options.data.reminderId, '2026-11-27-0900-water');
-  assert.match(calls.notifications[0].options.icon, /192\.png$/);
-});
-
-test('notification click opens the PWA with the originating reminder id', async () => {
-  const { listeners, calls } = createWorkerHarness();
-  let clickPromise;
-  listeners.get('notificationclick')({ notification: { data:{ url:'./', reminderId:'2026-11-27-0900-water' }, close(){} }, waitUntil: promise => { clickPromise = promise; } });
-  await clickPromise;
-  assert.equal(calls.opened.length, 1);
-  assert.match(calls.opened[0], /reminderId=2026-11-27-0900-water/);
-});

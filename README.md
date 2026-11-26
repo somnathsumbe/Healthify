@@ -1,13 +1,13 @@
 # Healthify · 21-Day Fat Loss & Healthy Routine PWA
 
-A mobile-first, Marathi-first Progressive Web App built with HTML, CSS, JavaScript ES Modules, Bootstrap 5 styling, JSON plan data, IndexedDB, and a separate minimal Web Push service.
+A mobile, tablet, and desktop-first Marathi Progressive Web App built with HTML, CSS, JavaScript ES Modules, JSON plan data, and IndexedDB. It does not contain Android or iOS native app projects.
 
 ## Privacy design
 
 - Public repository files contain the 21-day meal/workout reference plan only. Personal profile fields and profile-specific nutrition targets have been removed from the public JSON.
 - Name, age, height, weight, waist, knee score, daily progress, food/water logs, reminder status, and backup data are stored on the user's device in IndexedDB.
-- The Push Service stores only the browser Push Subscription and scheduled reminder delivery fields (`send_at`, `title`, `body`). It does not receive profile, weight, waist, meal logs, or medical notes.
-- VAPID private keys and the push owner token must exist only as server environment variables. Never commit `.env` or secrets.
+- Profile, weight, waist, daily progress, food/water logs, reminder status, and backup data are stored on the user's device in IndexedDB. Health data is not sent to a backend.
+- Routine reminders are shown only while the app is open. Closed-app Push notifications and a Push backend are not included.
 
 ## Run the PWA locally
 
@@ -34,20 +34,11 @@ The check validates all 21 days, 126 meal entries, the 22-event daily reminder t
 
 Deploy the static project to HTTPS (for example GitHub Pages). Open on mobile and use the browser's Install App / Add to Home Screen action. The service worker caches the app shell and plan JSON for offline plan viewing and logging.
 
-The Bootstrap 5.3.3 stylesheet and Google font are CDN resources; the app's custom CSS and cached core data remain available offline. If the CDN is unavailable, layout remains usable with local CSS, though Bootstrap-specific modal layout enhancements may be reduced.
+Google fonts are CDN resources; the app's custom CSS and cached core data remain available offline. If the CDN is unavailable, system fonts and the local layout remain usable.
 
-## Closed-app Push setup
+## Reminders
 
-The Push backend is separate from GitHub Pages and must run on an HTTPS host with a persistent disk for its JSON state file.
-
-1. Deploy `push-service/` as a Node.js service from this repository.
-2. Set the environment variables listed in `.env.example` on the hosting provider.
-3. Generate a VAPID key pair with `npx web-push generate-vapid-keys` and set both keys on the server.
-4. Set `PUSH_API_TOKEN` to a random token of at least 32 characters; do not add this token to source code.
-5. Configure `ALLOWED_ORIGIN` to the exact PWA origin.
-6. Open Healthify → Settings → Push Notification Setup. Enter the push service URL and owner token. The app subscribes the current browser and sends only the 21-day reminder schedule.
-
-Push delivery is best-effort, not an alarm-clock guarantee. Browser/OS notification settings, internet access, power management and push-provider availability affect delivery. On iOS, install the app to the Home Screen and grant permission. In-app reminders run only while the app is open.
+Reminders are evaluated locally while Healthify is open. The app does not request Push credentials or schedule closed-app notifications. Browser or OS alarms are not guaranteed when the app is closed.
 
 ## Nutrition data status
 
@@ -60,8 +51,7 @@ This app is a routine and logging tool, not a diagnosis or treatment. The suppli
 ## Tech stack
 
 - HTML5 / CSS3 / JavaScript ES Modules
-- Bootstrap 5.3.3 CDN stylesheet
+- Custom responsive CSS design system
 - JSON meal and reminder data
 - IndexedDB local health data
 - Service Worker + Web App Manifest
-- Node.js / Express / web-push / JSON persistent state / node-cron for optional closed-app Push
