@@ -1,7 +1,14 @@
-import { getTodayISO, getCurrentTimeHHMM, istDateTimeToISO, addDaysISO, getProgramDay } from '../utils/date-time.js';
+import { getTodayISO, istDateTimeToISO, addDaysISO, getProgramDay } from '../utils/date-time.js';
 import { getRecord, putRecord } from '../services/storage.js';
 
 const REMINDER_LEAD_MS = 60_000;
+const REMINDER_CATCH_UP_MS = 10 * 60_000;
+
+export function isWithinReminderWindow(dueAt, now = new Date(), windowMs = REMINDER_CATCH_UP_MS) {
+  const due = typeof dueAt === 'number' ? dueAt : Date.parse(dueAt);
+  const current = now instanceof Date ? now.getTime() : Date.parse(now);
+  return Number.isFinite(due) && Number.isFinite(current) && current >= due && current - due <= windowMs;
+}
 
 export function buildPushSchedule(startDate, reminderTemplate) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(startDate)) throw new TypeError('Start date invalid');
@@ -39,24 +46,25 @@ export function getReminderOccurrenceId(date, reminder) {
 }
 
 export async function checkDueReminders(plan, profile, onDue) {
-  const today = getTodayISO();
-  const now = getCurrentTimeHHMM();
+  const nowDate = new Date();
+  const today = getTodayISO(nowDate);
   const program = getProgramDay(profile.startDate, today);
   if (program.offset < 0 || program.offset >= 21) return;
   const day = plan.days[program.day - 1];
   const mealMap = new Map((day?.meals || []).map(meal => [meal.time, meal]));
   for (const reminder of plan.dailyReminderTemplate) {
-    if (reminder.time !== now) continue;
     const id = getReminderOccurrenceId(today, reminder);
     const saved = await getRecord('reminders', id);
     if (saved?.status === 'completed' || saved?.status === 'skipped') continue;
-    const snoozeDue = saved?.status === 'snoozed' && Date.parse(saved.snoozeUntil || '') <= Date.now();
-    if (saved?.status === 'snoozed' && !snoozeDue) continue;
-    if (reminder.time !== now && !snoozeDue) continue;
-    if (saved?.notifiedAt && !snoozeDue) continue;
+
+    const scheduledAt = istDateTimeToISO(today, reminder.time);
+    const dueAt = saved?.status === 'snoozed' ? saved.snoozeUntil : scheduledAt;
+    if (!isWithinReminderWindow(dueAt, nowDate)) continue;
+    if (saved?.notifiedAt && saved.status !== 'snoozed') continue;
+
     const meal = mealMap.get(reminder.time);
     const payload = { ...reminder, id, date: today, dayNumber: program.day, meal: meal || null };
-    await putRecord('reminders', { ...saved, id, status: 'pending', notifiedAt: new Date().toISOString(), snoozeUntil: null });
+    await putRecord('reminders', { ...saved, id, status: 'pending', notifiedAt: nowDate.toISOString(), snoozeUntil: null });
     onDue(payload);
   }
 }
