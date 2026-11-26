@@ -1,0 +1,1 @@
+Temporary marker. The hydrate workflow removes this folder after extracting the validated source bundle.
